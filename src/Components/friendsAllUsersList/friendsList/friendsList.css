@@ -1,5 +1,6 @@
 .friends-list {
-   min-height: 250px;
+   min-height: 500px;
+   width: 250px;
    padding: 10px;
    border: 2px dashed red;
    margin: 25px;

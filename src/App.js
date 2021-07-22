@@ -1,9 +1,9 @@
 import React from 'react'
-import Header from './components/header/header';
+import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Profile from './components/profile/Profile';
-import FriendsList from './Components/FriendsAllUsersList/friendsList/friendsList';
-import Timeline from './Components/timeline/timeline';
+import FriendsList from './components/FriendsAllUsersList/friendsList/FriendsList';
+import Timeline from './components/timeline/Timeline';
 
 const App = () => {
    return (

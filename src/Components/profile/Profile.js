@@ -1,10 +1,10 @@
 import React from 'react';
-import './editProfile.css';
+import './profile.css'
 
 const Profile = () => {
     return (
         <div className='profile'>
-            
+            <h3>Profile</h3>
         </div>
     )
 }
