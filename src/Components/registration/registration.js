@@ -3,10 +3,10 @@ import './registration.css';
 
 const Registration = () => {
     return (
-        <div>
+        <div className='registration'>
             
         </div>
     )
 }
 
-export default Registration
+export default Registration;

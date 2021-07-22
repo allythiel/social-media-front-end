@@ -3,10 +3,10 @@ import './timeline.css';
 
 const Timeline = () => {
     return (
-        <div>
+        <div className='timeline'>
             
         </div>
     )
 }
 
-export default Timeline
+export default Timeline;

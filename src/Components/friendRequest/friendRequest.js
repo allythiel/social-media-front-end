@@ -3,7 +3,7 @@ import './friendRequest.css';
 
 const FriendRequest = () => {
     return (
-        <div>
+        <div friend-request>
             
         </div>
     )

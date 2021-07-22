@@ -3,10 +3,10 @@ import './editProfile.css';
 
 const Profile = () => {
     return (
-        <div>
+        <div className='profile'>
             
         </div>
     )
 }
 
-export default Profile
+export default Profile;

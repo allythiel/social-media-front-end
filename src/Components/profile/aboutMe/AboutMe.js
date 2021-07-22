@@ -3,7 +3,7 @@ import './editAboutMe.css';
 
 const AboutMe = () => {
     return (
-        <div edit-about-me>
+        <div about-me>
             
         </div>
     )

@@ -3,7 +3,7 @@ import './allUsersList.css';
 
 const AllUsersList = () => {
     return (
-        <div>
+        <div className='all-users-list'>
             
         </div>
     )

@@ -3,7 +3,7 @@ import "./editAvatar.css";
 
 const Avatar = () => {
     return (
-        <div >
+        <div className='avatar'>
             
         </div>
     )

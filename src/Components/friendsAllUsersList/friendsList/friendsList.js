@@ -3,10 +3,10 @@ import './friendsList.css';
 
 const FriendsList = () => {
     return (
-        <div>
+        <div className='friends-list'>
             
         </div>
     )
 }
 
-export default FriendsList
+export default FriendsList;
