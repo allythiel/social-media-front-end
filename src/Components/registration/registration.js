@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './registration.css';
 
 const registration = () => {
     return (
