@@ -1,12 +1,12 @@
 import React from 'react';
 import './editAboutMe.css';
 
-const editAboutMe = () => {
+const AboutMe = () => {
     return (
-        <div>
+        <div edit-about-me>
             
         </div>
     )
 }
 
-export default editAboutMe
+export default AboutMe;

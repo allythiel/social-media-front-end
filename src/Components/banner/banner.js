@@ -1,12 +1,12 @@
 import React from 'react';
 import './banner.css';
 
-const banner = () => {
+const Banner = () => {
     return (
-        <div>
+        <div className='banner'>
             
         </div>
     )
 }
 
-export default banner
+export default Banner;

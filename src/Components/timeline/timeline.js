@@ -1,7 +1,7 @@
 import React from 'react';
 import './timeline.css';
 
-const timeline = () => {
+const Timeline = () => {
     return (
         <div>
             
@@ -9,4 +9,4 @@ const timeline = () => {
     )
 }
 
-export default timeline
+export default Timeline

@@ -1,12 +1,12 @@
 import React from 'react';
 import "./editAvatar.css";
 
-const editAvatar = () => {
+const Avatar = () => {
     return (
-        <div>
+        <div >
             
         </div>
     )
 }
 
-export default editAvatar
+export default Avatar;

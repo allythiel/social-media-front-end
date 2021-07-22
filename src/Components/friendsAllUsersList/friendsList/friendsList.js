@@ -1,7 +1,7 @@
 import React from 'react';
 import './friendsList.css';
 
-const friendsList = () => {
+const FriendsList = () => {
     return (
         <div>
             
@@ -9,4 +9,4 @@ const friendsList = () => {
     )
 }
 
-export default friendsList
+export default FriendsList

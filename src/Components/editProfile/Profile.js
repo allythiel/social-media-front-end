@@ -1,7 +1,7 @@
 import React from 'react';
-import './aboutMe.css';
+import './editProfile.css';
 
-const aboutMe = () => {
+const Profile = () => {
     return (
         <div>
             
@@ -9,4 +9,4 @@ const aboutMe = () => {
     )
 }
 
-export default aboutMe
+export default Profile

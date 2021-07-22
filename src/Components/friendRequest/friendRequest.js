@@ -1,7 +1,7 @@
 import React from 'react';
 import './friendRequest.css';
 
-const friendRequest = () => {
+const FriendRequest = () => {
     return (
         <div>
             
@@ -9,4 +9,4 @@ const friendRequest = () => {
     )
 }
 
-export default friendRequest
+export default FriendRequest;

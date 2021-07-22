@@ -1,7 +1,7 @@
 import React from 'react';
 import './registration.css';
 
-const registration = () => {
+const Registration = () => {
     return (
         <div>
             
@@ -9,4 +9,4 @@ const registration = () => {
     )
 }
 
-export default registration
+export default Registration

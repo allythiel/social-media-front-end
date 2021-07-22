@@ -1,7 +1,7 @@
 import React from 'react';
 import './allUsersList.css';
 
-const allUsersList = () => {
+const AllUsersList = () => {
     return (
         <div>
             
@@ -9,4 +9,4 @@ const allUsersList = () => {
     )
 }
 
-export default allUsersList
+export default AllUsersList;
