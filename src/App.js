@@ -2,9 +2,9 @@ import React from 'react'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import Profile from './components/profile/Profile'
-import FriendsList from './components/FriendsAllUsersList/friendsList/FriendsList'
 import Timeline from './components/timeline/Timeline'
 import './App.css'
+import FriendsAllUsersList from './components/FriendsAllUsersList/FriendsAllUsersList';
 
 
 const App = () => {
@@ -14,17 +14,18 @@ const App = () => {
          <Header/>
          <div className='content'>
             <div>
-               <Profile />
-            </div>
-            <div>
-               <Timeline/>
-            </div>
-            <div>
-               <FriendsList/>
+               <div>
+                  <Profile/>
+               </div>
+               <div>
+                  <Timeline/>
+               </div>
+               <div>
+                  <FriendsAllUsersList/>
+               </div>
             </div>
          </div>
-         <Footer/>
-      </div>
+         {/* <Footer/> */} </div>
    )
 }
 

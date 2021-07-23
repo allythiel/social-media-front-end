@@ -1,8 +1,21 @@
 .timeline {
-   min-height: 800px;
-   width: 700px;
+   min-height: 600px;
+   width: 600px;
    padding: 10px;
-   border: 2px dashed red;
+   border: 2px solid var(--theme-medium);
    margin: 25px;
+   border-radius: 5px;
+   background-image: url('../../images/weave-social-subdued-logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-clip:padding-box;
+    background-size: 70%;
+
    
+}
+
+.timeline h3 {
+   background-color: #999999;
+   padding: 10px;
+   border-radius: 5px;
 }

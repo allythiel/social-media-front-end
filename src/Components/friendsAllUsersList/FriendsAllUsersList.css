@@ -1,0 +1,11 @@
+.friends-all-users-list {
+   min-height: 600px;
+   width: 400px;
+   padding: 10px;
+   border: 7px solid var(--theme-light);
+   margin: 25px 50px;
+   background-color: var(--theme-dark);
+   border-radius: 10px;
+
+   
+}

@@ -2,6 +2,9 @@
     min-height: 400px;
     width: 500px;
     padding: 25px;
-    border: 2px dashed red;
     margin: 25px;
+    background-color: var(--theme-light);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+
 }
