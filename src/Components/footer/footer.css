@@ -1,6 +1,7 @@
 .footer {
-   min-height: 50px;
-   padding: 10px;
-   border: 2px dashed red;
-   
+    bottom: 0;
+    width: 100%;
+    min-height: 50px;
+    padding: 10px;
+    border: 2px dashed red;
 }

@@ -8,3 +8,9 @@
 .App {
    margin: 0;
 }
+
+.content {
+   display: flex;
+   flex-direction: row;
+   align-content: space-between;
+}
