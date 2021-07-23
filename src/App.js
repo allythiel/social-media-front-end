@@ -1,8 +1,8 @@
 import React from 'react'
-import Header from './components/header/header';
-import Footer from './components/footer/Footer';
-import Profile from './components/profile/Profile';
-import FriendsList from './Components/FriendsAllUsersList/friendsList/friendsList';
+import Header from './Components/header/header';
+import Footer from './Components/footer/footer';
+import Profile from './Components/profile/Profile';
+import FriendsList from './Components/friendsAllUsersList/friendsList/friendsList';
 import Timeline from './Components/timeline/timeline';
 
 const App = () => {
