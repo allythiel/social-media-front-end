@@ -6,7 +6,9 @@ import FriendsList from './components/FriendsAllUsersList/friendsList/FriendsLis
 import Timeline from './components/timeline/Timeline'
 import './App.css'
 
+
 const App = () => {
+
    return (
       <div className='App'>
          <Header/>
