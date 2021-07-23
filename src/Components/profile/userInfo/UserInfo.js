@@ -1,11 +1,11 @@
 import React from 'react'
 import AboutMe from '../aboutMe/AboutMe'
 
-const UserInfo = () => {
+const UserInfo = (props) => {
    return (
       <div className='user-info'>
-         <h3>Susan Carter</h3>
-         <AboutMe />
+         <h2>{props.name}</h2>
+         <AboutMe aboutme={props.aboutme} />
       </div>
    )
 }

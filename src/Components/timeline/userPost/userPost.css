@@ -1,18 +1,17 @@
 .user-post {
-   padding: 10px;
-   min-height: 50px;
-   margin-top: 25px;
-   color: var(--theme-dark);
-   border-radius: 3px;
-   background-color: #ffffff;
-   opacity: .9;
-   font-size: 1.2em;
-   line-height: 1.2em;
-   text-align: left;
-
+    padding: 10px;
+    min-height: 50px;
+    margin-top: 25px;
+    color: var(--theme-dark);
+    border-radius: 3px;
+    background-color: #ffffff;
+    opacity: 0.9;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    text-align: left;
 }
 
 .user-post p span {
-   color: var(--text-dark);
-   font-weight: bold;
+    color: var(--text-dark);
+    font-weight: bold;
 }

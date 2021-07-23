@@ -1,10 +1,11 @@
 import React from 'react';
 import './aboutme.css';
 
-const AboutMe = () => {
+const AboutMe = (props) => {
     return (
         <div className='about-me'>
-            <h4>About Me</h4>
+          <h4>About Me</h4>
+          <p>{props.aboutme}</p>
         </div>
     )
 }

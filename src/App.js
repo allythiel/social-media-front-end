@@ -8,6 +8,9 @@ import FriendsAllUsersList from './components/FriendsAllUsersList/FriendsAllUser
 
 
 const App = () => {
+   const aboutme = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eos illum accusantium. Animi, consequuntur assumenda!'
+   
+   const name='Jaslyn Thomas'
 
    return (
       <div className='App'>
@@ -15,7 +18,7 @@ const App = () => {
          <div className='content'>
             <div>
                <div>
-                  <Profile/>
+                  <Profile aboutme={aboutme} name={name}/>
                </div>
                <div>
                   <Timeline/>
@@ -25,7 +28,7 @@ const App = () => {
                </div>
             </div>
          </div>
-         {/* <Footer/> */} </div>
+         <Footer/> </div>
    )
 }
 
