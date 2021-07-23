@@ -1,9 +1,18 @@
 .user-post {
    padding: 10px;
-   border: 1px solid #cccccc;
    min-height: 50px;
-   margin: 25px;
-   box-shadow: inset 0px 3px 3px 5px #333333;
+   margin-top: 25px;
+   color: var(--theme-dark);
    border-radius: 3px;
-   background-color: #f2f2f2;
+   background-color: #ffffff;
+   opacity: .9;
+   font-size: 1.2em;
+   line-height: 1.2em;
+   text-align: left;
+
+}
+
+.user-post p span {
+   color: var(--text-dark);
+   font-weight: bold;
 }
