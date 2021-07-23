@@ -7,10 +7,17 @@
 
 .App {
    margin: 0;
+   text-align: center;
 }
 
 .content {
    display: flex;
    flex-direction: row;
-   align-content: space-between;
+   align-content:center;
+   width: 90%;
+   margin: auto;
+}
+
+h2, h3, h4 {
+   text-align: center;
 }

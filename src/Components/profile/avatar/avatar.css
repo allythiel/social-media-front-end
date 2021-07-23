@@ -1,0 +1,10 @@
+.avatar {
+   margin: auto;
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    border: 2px dashed green;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}

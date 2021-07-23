@@ -1,10 +1,10 @@
 import React from 'react';
-import "./editAvatar.css";
+import "./avatar.css";
 
 const Avatar = () => {
     return (
         <div className='avatar'>
-            
+            <h4>Avatar</h4>
         </div>
     )
 }

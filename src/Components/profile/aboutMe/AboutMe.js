@@ -1,10 +1,10 @@
 import React from 'react';
-import './editAboutMe.css';
+import './aboutme.css';
 
 const AboutMe = () => {
     return (
-        <div about-me>
-            
+        <div className='about-me'>
+            <h4>About Me</h4>
         </div>
     )
 }
