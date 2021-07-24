@@ -20,7 +20,7 @@
 
 .timeline > div {
     background-color: #ffffff;
-    opacity: .85;
+    opacity: 0.85;
 }
 
 .timeline::-webkit-scrollbar {
@@ -28,9 +28,9 @@
 }
 
 .timeline h3 {
-   width: 100%;
+    width: 100%;
+    margin-bottom: 15px;
     background-color: #999999;
-    padding: 10px;
     border-radius: 10px;
     text-align: center;
 }
