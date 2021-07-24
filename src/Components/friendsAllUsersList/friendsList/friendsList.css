@@ -1,7 +1,14 @@
 .friends-list {
    padding: 5px;
    margin: 10px;
-   
+   overflow: scroll;
+   overflow-x: hidden;
+   -ms-overflow-style: none; /* IE and Edge */
+   scrollbar-width: none; /* Firefox */
+}
+
+.friends-list::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 
 .friends-list ul li {
