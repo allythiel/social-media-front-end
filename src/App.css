@@ -36,13 +36,7 @@ body {
     flex-wrap: wrap;
     margin: auto;
     margin-top: 250px;
-    
-
 }
-
-
-
-
 
 h2,
 h3,
@@ -50,6 +44,48 @@ h4 {
     text-align: center;
 }
 
-h3, h4 {
-   text-transform: uppercase;
+h3,
+h4 {
+    text-transform: uppercase;
+}
+
+.button-lg,
+.button-md,
+.button-sm {
+    height: 38px;
+    min-width: 125px;
+    margin: 10px;
+    font-size: 1.2em;
+    padding: 2px 10px;
+    background-color: inherit;
+    border: 2px solid var(--theme-medium);
+    color: var(--theme-medium);
+    border-radius: 30px;
+    text-align: center;
+}
+
+.button-lg:hover,
+.button-md:hover,
+.button-sm:hover {
+    background-color: var(--theme-dark);
+    color: var(--theme-medium);
+    font-weight: bold;
+}
+
+
+.button-md {
+   height: 35px;
+   min-width: 75px;
+   font-size: 1.1em;
+   padding: 2px 10px;
+
+}
+
+.button-sm {
+   height: 30px;
+   min-width: 60px;
+   font-size: .9em;
+   padding: 2px 15px;
+   border-radius: 15px;
+
 }
