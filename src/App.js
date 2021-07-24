@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import Profile from './components/profile/Profile'
@@ -29,7 +29,7 @@ const App = () => {
                      name={name}/>
                </div>
                <div>
-                  <Timeline />
+                  <Timeline/>
                </div>
                <div>
                   <FriendsAllUsersList friends={friends}/>
