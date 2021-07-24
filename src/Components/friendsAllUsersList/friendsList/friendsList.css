@@ -1,6 +1,6 @@
 .friends-list {
-   padding: 10px;
-   margin: 25px;
+   padding: 5px;
+   margin: 10px;
    
 }
 
@@ -10,6 +10,10 @@
    height: 55px;
    font-size: 1.3em;
 
+}
+
+.friends-list ul li:hover {
+   background-color: var(--theme-dark);
 }
 
 .friends-list ul {
@@ -22,6 +26,5 @@
 
 .friend-name:hover {
    text-decoration: underline;
-   color: var(--theme-dark);
 }
 

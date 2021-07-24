@@ -29,13 +29,13 @@ body {
     background-color: #ffffff;
 }
 .content {
-    min-height: 1000px;
+    min-height: 700px;
     text-align: center;
 }
 
 .content > div {
     display: flex;
-    margin-top: 175px;
+    margin-top: 150px;
     width: 100%;
     flex-direction: row;
     justify-content: space-around;

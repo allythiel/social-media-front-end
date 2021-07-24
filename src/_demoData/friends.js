@@ -2,23 +2,23 @@ import avatarURL from '../images/avatar-placeholder.png';
 
 const myFriends = [
    {
-      name: 'Bradley Cooper',
+      name: 'Giannis Anetokounmpo',
       avatarURL: avatarURL
    },
    {
-      name: 'Bradley Cooper',
+      name: 'Bradley Beal',
       avatarURL: avatarURL
    },   {
-      name: 'Bradley Cooper',
+      name: 'Lebron James',
       avatarURL: avatarURL
    },   {
-      name: 'Bradley Cooper',
+      name: 'Breanna Stewart',
       avatarURL: avatarURL
    },   {
-      name: 'Bradley Cooper',
+      name: 'Tanya Makeover',
       avatarURL: avatarURL
    },   {
-      name: 'Bradley Cooper',
+      name: 'Steph Curry',
       avatarURL: avatarURL
    },
 ]

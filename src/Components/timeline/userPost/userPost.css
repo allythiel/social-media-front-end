@@ -4,11 +4,11 @@
     margin-top: 25px;
     color: var(--theme-dark);
     border-radius: 3px;
-    background-color: #ffffff;
-    opacity: 0.9;
+    background-color: inherit;
     font-size: 1.2em;
     line-height: 1.2em;
     text-align: left;
+    opacity: inherit;
 }
 
 .user-post p span {
