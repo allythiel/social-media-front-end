@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import Profile from './components/profile/Profile'
@@ -13,9 +13,11 @@ import myFriends from './_demoData/friends.js'
 /**************************************************** */
 
 const App = () => {
-   const aboutme = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eos illum accusantium. Animi, consequuntur assumenda!'
+   const [friends, setFriends] = useState(myFriends);
 
-   const name = 'Jaslyn Thomas'
+   const aboutme = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eos illum accusantium. Animi, consequuntur assumenda!';
+   const name = 'Jaslyn Thomas';
+
 
    return (
       <div className='App'>
@@ -27,10 +29,10 @@ const App = () => {
                      name={name}/>
                </div>
                <div>
-                  <Timeline/>
+                  <Timeline />
                </div>
                <div>
-                  <FriendsAllUsersList/>
+                  <FriendsAllUsersList friends={friends}/>
                </div>
             </div>
          </div>

@@ -20,6 +20,11 @@
     text-align: center;
 }
 
+ul li {
+   list-style: none;
+   color: var(--theme-light);
+}
+
 body {
     background-color: #ffffff;
 }
@@ -30,12 +35,11 @@ body {
 
 .content > div {
     display: flex;
+    margin-top: 175px;
     width: 100%;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: auto;
-    margin-top: 250px;
 }
 
 h2,
@@ -91,7 +95,11 @@ h4 {
 }
 
 .avatar-inline {
-   height: 75px;
-   width: 75px;
+   height: 50px;
+   width: 50px;
    padding: 5px;
+}
+
+.avatar-inline img {
+   width: 100%;
 }

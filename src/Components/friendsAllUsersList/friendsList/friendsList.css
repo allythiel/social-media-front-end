@@ -3,3 +3,25 @@
    margin: 25px;
    
 }
+
+.friends-list ul li {
+   display: flex;
+   line-height: 50px;
+   height: 55px;
+   font-size: 1.3em;
+
+}
+
+.friends-list ul {
+   margin-top: 25px;
+}
+
+.friends-list .avatar-inline {
+   margin-right: 25px;
+}
+
+.friend-name:hover {
+   text-decoration: underline;
+   color: var(--theme-dark);
+}
+

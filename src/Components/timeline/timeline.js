@@ -2,7 +2,7 @@ import React from 'react';
 import UserPost from './userPost/UserPost';
 import './timeline.css';
 
-const Timeline = () => {
+const Timeline = (props) => {
     return (
         <div className='timeline'>
           <h3>Timeline</h3>
