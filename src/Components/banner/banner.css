@@ -1,5 +1,6 @@
 .banner {
    text-align: left;
+   width: 100%;
    color: var(--theme-dark);
    padding: 15px;
    display:flex;
@@ -7,8 +8,10 @@
    justify-content: space-between;
 }
 
-.banner div {
-   width: 300px;
+.banner > div {
+   min-width: 200px;
+   margin-right: 50px;
+
 }
 
 .banner h1 {

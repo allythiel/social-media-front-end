@@ -51,7 +51,11 @@ h4 {
 h3,
 h4 {
     text-transform: uppercase;
+    color: var(--theme-dark);
+    font-weight: bold;
 }
+
+
 
 .button-lg,
 .button-md,
