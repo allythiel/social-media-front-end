@@ -9,6 +9,7 @@ const Profile = (props) => {
           <h3>Profile</h3>
           <Avatar />
           <UserInfo aboutme={props.aboutme} name={props.name} />
+          <button className="button-md">Edit Profile</button>
         </div>
     )
 }

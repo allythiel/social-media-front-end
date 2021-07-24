@@ -58,8 +58,8 @@ h4 {
     font-size: 1.2em;
     padding: 2px 10px;
     background-color: inherit;
-    border: 2px solid var(--theme-medium);
-    color: var(--theme-medium);
+    border: 2px solid var(--theme-dark);
+    color: var(--theme-dark);
     border-radius: 30px;
     text-align: center;
 }
@@ -82,10 +82,10 @@ h4 {
 }
 
 .button-sm {
-   height: 30px;
+   height: 25px;
    min-width: 60px;
-   font-size: .9em;
-   padding: 2px 15px;
+   font-size: .6em;
+   padding: 1px 10px;
    border-radius: 15px;
 
 }

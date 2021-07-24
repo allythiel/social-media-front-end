@@ -4,6 +4,7 @@ import Footer from './components/footer/Footer'
 import Profile from './components/profile/Profile'
 import Timeline from './components/timeline/Timeline'
 import FriendsAllUsersList from './components/FriendsAllUsersList/FriendsAllUsersList';
+import FriendsRequestStatusBar from './components/FriendsRequestStatusBar/FriendsRequestStatusBar.js';
 import './App.css'
 
 
@@ -17,7 +18,6 @@ const App = () => {
          <Header/>
          <div className='content'>
             <div>
-            <button className='button-lg'>large</button><button className='button-md'>medium</button><button className='button-sm'>small</button>
                <div>
                   <Profile aboutme={aboutme} name={name}/>
                </div>
