@@ -1,6 +1,7 @@
 .friends-list {
    padding: 5px;
    margin: 10px;
+   height: 100%;
    overflow: scroll;
    overflow-x: hidden;
    -ms-overflow-style: none; /* IE and Edge */
