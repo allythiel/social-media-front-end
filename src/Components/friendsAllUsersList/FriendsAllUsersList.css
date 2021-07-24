@@ -1,11 +1,15 @@
 .friends-all-users-list {
-   min-height: 600px;
+   height: 600px;
    width: 400px;
    padding: 10px;
    border: 7px solid var(--theme-light);
    margin: 25px 50px;
    background-color: var(--theme-medium);
    border-radius: 10px;
+   overflow: scroll;
+   overflow-x: hidden;
+   -ms-overflow-style: none; /* IE and Edge */
+   scrollbar-width: none; /* Firefox */
 
    
 }

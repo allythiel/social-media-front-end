@@ -15,7 +15,7 @@
     border-radius: 10px;
     max-width: 50px;
     min-width: 25px;
-    padding: 1px;
+    padding: 1px 5px;
     background-color: var(--theme-light);
     color: var(--theme-dark);
 }

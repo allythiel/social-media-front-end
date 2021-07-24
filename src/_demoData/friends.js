@@ -21,6 +21,18 @@ const myFriends = [
       name: 'Steph Curry',
       avatarURL: avatarURL
    },
+   {
+      name: 'Sara Fisher',
+      avatarURL: avatarURL
+   },
+   {
+      name: 'Shela Thompson',
+      avatarURL: avatarURL
+   },
+   {
+      name: 'Bradley Cooper',
+      avatarURL: avatarURL
+   },
 ]
 
 export default myFriends;
