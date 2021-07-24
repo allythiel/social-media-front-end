@@ -4,7 +4,6 @@ import Footer from './components/footer/Footer'
 import Profile from './components/profile/Profile'
 import Timeline from './components/timeline/Timeline'
 import FriendsAllUsersList from './components/FriendsAllUsersList/FriendsAllUsersList';
-import FriendsRequestStatusBar from './components/FriendsRequestStatusBar/FriendsRequestStatusBar.js';
 import './App.css'
 
 /**************************************************** */
