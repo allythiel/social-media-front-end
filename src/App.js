@@ -7,11 +7,15 @@ import FriendsAllUsersList from './components/FriendsAllUsersList/FriendsAllUser
 import FriendsRequestStatusBar from './components/FriendsRequestStatusBar/FriendsRequestStatusBar.js';
 import './App.css'
 
+/**************************************************** */
+// Remove after production state is created (For demo)
+import myFriends from './_demoData/friends.js'
+/**************************************************** */
 
 const App = () => {
    const aboutme = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eos illum accusantium. Animi, consequuntur assumenda!'
-   
-   const name='Jaslyn Thomas'
+
+   const name = 'Jaslyn Thomas'
 
    return (
       <div className='App'>
@@ -19,7 +23,8 @@ const App = () => {
          <div className='content'>
             <div>
                <div>
-                  <Profile aboutme={aboutme} name={name}/>
+                  <Profile aboutme={aboutme}
+                     name={name}/>
                </div>
                <div>
                   <Timeline/>
@@ -29,7 +34,8 @@ const App = () => {
                </div>
             </div>
          </div>
-         <Footer/> </div>
+         <Footer/>
+      </div>
    )
 }
 
