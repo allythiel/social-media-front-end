@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import Main from './components/main/Main';
-import Login from './components/login/Login';
+import AppLogin from './components/appLogin/appLogin';
 import './App.css'
 
 /**************************************************** */
@@ -12,18 +12,21 @@ import myFriends from './_demoData/friends.js'
 
 const App = () => {
    const [friends, setFriends] = useState(myFriends);
+   const [loggedIn, setLoggedIn] = useState(false);
+   const [register, setRegister] = useState(false);
+   const [registering, setRegistering] = useState(false);
 
    const aboutme = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eos illum accusantium. Animi, consequuntur assumenda!';
    const name = 'Jaslyn Thomas';
 
-
    return (
-      <div className='App'>
-         <Header/>
+      <div id='app' className='App'>
+         <Header loggedIn={loggedIn} />
          <div className='content'>
-            <Main aboutme={aboutme} name={name} friends={friends} />
+            {(!loggedIn || registering) && <AppLogin register={register} registering={registering} setRegistering={setRegistering} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
+            { loggedIn && <Main aboutme={aboutme} name={name} friends={friends} /> }
          </div>
-         <Footer/>
+         {/* <Footer /> */}
       </div>
    )
 }
