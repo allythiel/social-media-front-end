@@ -1,9 +1,8 @@
 import React, {useState} from 'react'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
-import Profile from './components/profile/Profile'
-import Timeline from './components/timeline/Timeline'
-import FriendsAllUsersList from './components/FriendsAllUsersList/FriendsAllUsersList';
+import Main from './components/main/Main';
+import Login from './components/login/Login';
 import './App.css'
 
 /**************************************************** */
@@ -22,18 +21,7 @@ const App = () => {
       <div className='App'>
          <Header/>
          <div className='content'>
-            <div>
-               <div>
-                  <Profile aboutme={aboutme}
-                     name={name}/>
-               </div>
-               <div>
-                  <Timeline/>
-               </div>
-               <div>
-                  <FriendsAllUsersList friends={friends}/>
-               </div>
-            </div>
+            <Main aboutme={aboutme} name={name} friends={friends} />
          </div>
          <Footer/>
       </div>
