@@ -19,14 +19,14 @@
     width: 400px;
     border: 3px solid var(--theme-light);
     padding: 25px;
-    margin-top: 125px;
+    margin-top: 200px;
     border-radius: 10px;
     background-color: var(--theme-medium);
     box-shadow: 2px 2px 5px #666666;
 }
 
 .app-login .login-form .login-action-bar {
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 .login-form h3 {

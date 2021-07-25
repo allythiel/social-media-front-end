@@ -1,7 +1,8 @@
 .banner-action-bar {
     display: flex;
-    margin: 0;
+    margin-top: 10px;
 }
+
 
 .banner-action-bar div.button-md,
 .banner-action-bar div.button-md:hover {
@@ -27,4 +28,5 @@
 .banner-action-bar .login img {
     width: 48px;
     padding: 7px 10px 7px 10px;
+
 }
