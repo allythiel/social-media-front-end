@@ -7,7 +7,7 @@ const Banner = (props) => {
         <div className='banner'>
           <div><h1>Weave<span>Social</span></h1></div>
           <div>
-             {props.loggedIn && <BannerActionBar />}
+             {props.loggedIn && <BannerActionBar loggedIn={props.loggedIn} setLoggedIn={props.setLoggedIn} />}
           </div>
           
         </div>

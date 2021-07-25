@@ -3,7 +3,7 @@ import './appLogin.css';
 
 
 const AppLogin = (props) => {
-   const changeAppBackground = () => document.getElementById('app').style.backgroundColor = '#999999';
+   const changeAppBackground = (color) => document.getElementById('app').style.backgroundColor = color;
    return (
       <div className='app-login'>
          <div className='login-form'>
@@ -15,7 +15,7 @@ const AppLogin = (props) => {
                <input type='email' name='email' placeholder='Email' value='craig.satchell@gmail.com' /><br />
                <input type='password' name='password1' placeholder='Password' value='password' /><br />
                {props.register && <input type='password' name='password2' placeholder='Password' value='password' />}<br />
-               <div className="login-action-bar">{!props.register && <button className="button-md register" onClick={() => { props.setRegister(true) }}>Register</button>}{!props.register && <button className="button-md login" onClick={() => { props.setLoggedIn(true); changeAppBackground() }}>Login</button>}{props.register && <button className='button-md' onClick={() => { props.setRegister(false) }}>Submit</button>}</div>
+               <div className="login-action-bar">{!props.register && <button className="button-md register" onClick={() => { props.setRegister(true) }}>Register</button>}{!props.register && <button className="button-md login" onClick={() => { props.setLoggedIn(true); changeAppBackground('#999999') }}>Login</button>}{props.register && <button className='button-md' onClick={() => { props.setRegister(false) }}>Submit</button>}</div>
             </form>
          </div>
       </div>
