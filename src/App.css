@@ -27,6 +27,7 @@ ul li {
 
 body {
     background-color: #999999;
+    /* background-image: url('./images/weave-background-subdued2.png'); */
 }
 .content {
     min-height: 700px;
@@ -35,7 +36,7 @@ body {
 
 .content > div {
     display: flex;
-    margin-top: 150px;
+    margin-top: 50px;
     width: 100%;
     flex-direction: row;
     justify-content: space-around;
