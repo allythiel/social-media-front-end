@@ -15,9 +15,15 @@
 
 }
 
-.banner > div h1 {
-   padding: 10px 10px;
+.banner > div h1, .banner > div p {
+   padding: 10px 0 0 5px;
+   line-height: .9em;
 }
+
+.banner > div p {
+   margin-left: 5px;
+}
+
 
 .banner img {
 width: 75px;
