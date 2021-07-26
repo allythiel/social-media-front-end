@@ -22,6 +22,7 @@
 
 .banner > div p {
    margin-left: 5px;
+   font-style: italic;
 }
 
 
@@ -31,6 +32,11 @@ padding: 0;
 margin: 0;
 }
 
+.banner .user-info {
+   font-size: 1.2em;
+   margin-top: 10px;
+   font-weight: bold;
+}
 
 .banner h1 {
    font-family: 'Times New Roman', Times, serif;
