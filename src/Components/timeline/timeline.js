@@ -1,5 +1,5 @@
 import React from 'react';
-import UserPost from './userPost/UserPost';
+import UserPost from './userPost/userPost';
 import './timeline.css';
 
 const Timeline = (props) => {

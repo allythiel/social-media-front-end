@@ -1,5 +1,5 @@
 import React from 'react';
-import Banner from '../banner/Banner';
+import Banner from '../banner/banner';
 import './header.css';
 
 const Header = (props) => {
