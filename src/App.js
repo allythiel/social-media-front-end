@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Header from './components/header/Header'
-import Footer from './components/footer/Footer'
 import Main from './components/main/Main';
 import AppLogin from './components/appLogin/appLogin';
 import './App.css'

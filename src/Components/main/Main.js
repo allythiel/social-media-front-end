@@ -1,7 +1,7 @@
 import React from 'react'
-import Profile from '../profile/Profile'
+import Profile from '../profile/profile'
 import Timeline from '../timeline/Timeline'
-import FriendsAllUsersList from '../FriendsAllUsersList/FriendsAllUsersList'
+import FriendsAllUsersList from '../FriendsAllUsersList/friendsAllUsersList'
 import './main.css'
 
 

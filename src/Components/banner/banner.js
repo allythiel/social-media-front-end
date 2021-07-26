@@ -1,5 +1,5 @@
 import React from 'react';
-import BannerActionBar from '../bannerActionBar/BannerActionBar';
+import BannerActionBar from '../bannerActionBar/bannerActionBar';
 import './banner.css';
 import logo from '../../images/weave-social-logo.svg';
 

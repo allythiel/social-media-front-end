@@ -1,5 +1,5 @@
 import React from 'react'
-import LikesBar from './likesBar/LikesBar';
+import LikesBar from './likesBar/likesBar';
 import './userPost.css';
 
 const UserPost = (props) => {
