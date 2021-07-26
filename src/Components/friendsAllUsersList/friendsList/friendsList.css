@@ -2,6 +2,7 @@
    padding: 5px;
    margin: 10px;
    height: 100%;
+   text-align: left;
    overflow: scroll;
    overflow-x: hidden;
    -ms-overflow-style: none; /* IE and Edge */
@@ -14,14 +15,19 @@
 
 .friends-list ul li {
    display: flex;
+   padding: 5px;
+   width: 390px;
    line-height: 50px;
    height: 55px;
    font-size: 1.3em;
+   overflow: hidden;
+   cursor: pointer;
 
 }
 
 .friends-list ul li:hover {
    background-color: var(--theme-dark);
+
 }
 
 .friends-list ul {
