@@ -13,7 +13,15 @@ import myFriends from './_demoData/friends.js'
 
 const App = () => {
    const [friends, setFriends] = useState(myFriends);
-   const [users, setUsers] = useState(null)
+   const [users, setUsers] = useState(null);
+   const [currentUser, setCurrentUser] = useState(null);
+   const [newUser, setNewUser] = useState({
+      name: '',
+      email: '',
+      password1: '',
+      password2:''
+   })
+
    const [loggedIn, setLoggedIn] = useState(false);
    const [register, setRegister] = useState(false);
    const [messageText, setMessageText] = useState('');
@@ -51,7 +59,8 @@ const App = () => {
          <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
          { showMessageBar && <MessageBar messageText={'This is a sample informational message'} setShowMessageBar={setShowMessageBar} /> }
          <div className='content'>
-            { !loggedIn && <AppLogin users={users} setUsers={setUsers} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit} register={register} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
+            {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit}
+               register={register} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
             {loggedIn && <Main aboutme={aboutme} name={name} friends={friends} />}
          </div>
          {/* <Footer /> */}
