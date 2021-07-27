@@ -3,7 +3,6 @@ import './appLogin.css';
 
 
 const AppLogin = (props) => {
-   const changeAppBackground = (color) => document.getElementById('app').style.backgroundColor = color;
    return (
       <div className='app-login'>
          <div className='login-form'>
@@ -17,9 +16,8 @@ const AppLogin = (props) => {
                {props.register && <input type='password' name='password2' placeholder='Confirm' onChange={props.handleUserChange} value={props.newUser.password2} />}<br />
                
                {/* login action bar */}
-               <div className="login-action-bar">{!props.register && <button className="button-md register" onClick={() => { props.setRegister(true) }}>Register</button>}{!props.register && <button className="button-md login" onClick={() => { props.setLoggedIn(true); changeAppBackground('#999999') }}>Login</button>}{props.register && <button className='button-md' onClick={() => { props.setRegister(false) }}>Submit</button>}</div>
+               <div className="login-action-bar">{!props.register && <button className="button-md register" onClick={() => { props.setRegister(true) }}>Register</button>}{!props.register && <input type='submit' className="button-md login" value='Login'></input>}{props.register && <button className='button-md' onClick={() => { props.setRegister(false) }}>Submit</button>}</div>
             </form>
-
          </div>
       </div>
    )

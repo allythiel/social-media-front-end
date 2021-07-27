@@ -14,17 +14,17 @@ import myFriends from './_demoData/friends.js'
 const App = () => {
    const [friends, setFriends] = useState(myFriends);
    const [users, setUsers] = useState(null);
-   const [currentUser, setCurrentUser] = useState(null);
+   //const [currentUser, setCurrentUser] = useState(null);
    const [newUser, setNewUser] = useState({
       name: '',
       email: '',
       password1: '',
-      password2:''
+      password2: ''
    })
 
    const [loggedIn, setLoggedIn] = useState(false);
    const [register, setRegister] = useState(false);
-   const [messageText, setMessageText] = useState('');
+   //const [messageText, setMessageText] = useState('');
    const [showMessageBar, setShowMessageBar] = useState(true);
 
 
@@ -47,17 +47,24 @@ const App = () => {
    }, [])
 
    const handleUserChange = (event) => {
-      
+      event.persist();
+      setNewUser(prevNewUser => ({ ...prevNewUser, [event.target.name]: event.target.value }));
+      console.log(newUser);
    }
 
    const handleUserSubmit = (event) => {
       event.preventDefault();
+      setLoggedIn(true);
+      document.getElementById('app').style.backgroundColor = '#999999';
+      alert('submit form');
    }
+
+   console.log(users);
 
    return (
       <div id='app' className='App'>
          <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-         { showMessageBar && <MessageBar messageText={'This is a sample informational message'} setShowMessageBar={setShowMessageBar} /> }
+         {showMessageBar && <MessageBar messageText={'This is a sample informational message'} setShowMessageBar={setShowMessageBar} />}
          <div className='content'>
             {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit}
                register={register} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
