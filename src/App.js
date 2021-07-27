@@ -44,9 +44,9 @@ const App = () => {
    return (
       <div id='app' className='App'>
          <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-         { showMessageBar && <MessageBar messageText={'This is a sample information message'} setShowMessageBar={setShowMessageBar} /> }
+         { showMessageBar && <MessageBar messageText={'This is a sample informational message'} setShowMessageBar={setShowMessageBar} /> }
          <div className='content'>
-            {(!loggedIn || registering) && <AppLogin register={register} registering={registering} setRegistering={setRegistering} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
+            {(!loggedIn || registering) && <AppLogin users={users} setUsers={setUsers} register={register} registering={registering} setRegistering={setRegistering} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
             {loggedIn && <Main aboutme={aboutme} name={name} friends={friends} />}
          </div>
          {/* <Footer /> */}
