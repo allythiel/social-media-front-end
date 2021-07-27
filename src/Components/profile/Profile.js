@@ -1,6 +1,6 @@
 import React from 'react';
 import Avatar from './avatar/avatar';
-import UserInfo from './userInfo/UserInfo';
+import UserInfo from './userInfo/userInfo';
 import './profile.css'
 
 const Profile = (props) => {
