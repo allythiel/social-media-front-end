@@ -1,5 +1,5 @@
 import React from 'react';
-import FriendsList from '../friendsList/FriendsList';
+import FriendsList from '../friendsList/friendsList';
 import './allUsersList.css';
 
 const AllUsersList = () => {
