@@ -54,9 +54,13 @@ const App = () => {
 
    const handleUserSubmit = (event) => {
       event.preventDefault();
-      setLoggedIn(true);
-      document.getElementById('app').style.backgroundColor = '#999999';
-      alert('submit form');
+      if (register) {
+         setRegister(false);
+      } else {
+         setLoggedIn(true);
+         document.getElementById('app').style.backgroundColor = '#999999';
+         alert('submit form');
+      }
    }
 
    console.log(users);
