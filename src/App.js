@@ -16,7 +16,6 @@ const App = () => {
    const [users, setUsers] = useState(null)
    const [loggedIn, setLoggedIn] = useState(false);
    const [register, setRegister] = useState(false);
-   const [registering, setRegistering] = useState(false);
    const [messageText, setMessageText] = useState('');
    const [showMessageBar, setShowMessageBar] = useState(true);
 
@@ -39,14 +38,20 @@ const App = () => {
       getAllUsers();
    }, [])
 
+   const handleUserChange = (event) => {
+      
+   }
 
+   const handleUserSubmit = (event) => {
+      event.preventDefault();
+   }
 
    return (
       <div id='app' className='App'>
          <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
          { showMessageBar && <MessageBar messageText={'This is a sample informational message'} setShowMessageBar={setShowMessageBar} /> }
          <div className='content'>
-            {(!loggedIn || registering) && <AppLogin users={users} setUsers={setUsers} register={register} registering={registering} setRegistering={setRegistering} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
+            { !loggedIn && <AppLogin users={users} setUsers={setUsers} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit} register={register} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
             {loggedIn && <Main aboutme={aboutme} name={name} friends={friends} />}
          </div>
          {/* <Footer /> */}
