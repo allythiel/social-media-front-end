@@ -20,10 +20,10 @@ const App = () => {
 
    return (
       <div id='app' className='App'>
-         <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
+         <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
          <div className='content'>
             {(!loggedIn || registering) && <AppLogin register={register} registering={registering} setRegistering={setRegistering} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
-            { loggedIn && <Main aboutme={aboutme} name={name} friends={friends} /> }
+            {loggedIn && <Main aboutme={aboutme} name={name} friends={friends} />}
          </div>
          {/* <Footer /> */}
       </div>
