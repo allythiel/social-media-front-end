@@ -85,7 +85,7 @@ const App = () => {
    *  EVENT HANDLERS
    ***********************************************************/
    const handleLoginAvatarClick = () => {    // Banner component
-      alert('avatar click');
+      //alert('avatar click');
       setLoggedIn(false);
       setCurrentUser(null);
       setLoggedInUser(null);
@@ -142,7 +142,7 @@ const App = () => {
          <div className='content'>
             {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit}
                register={register} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
-            {loggedIn && <Main loggedInUser={loggedInUser} currentUser={currentUser} aboutme={aboutme} name={name} friends={friends} />}
+            {(loggedIn && currentUser) && <Main loggedInUser={loggedInUser} currentUser={currentUser} aboutme={aboutme} name={name} friends={friends} />}
          </div>
          {/* <Footer /> */}
       </div>

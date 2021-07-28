@@ -2,7 +2,7 @@ import React from 'react';
 import "./avatar.css";
 import avatar from '../../../images/avatar-placeholder.png';
 
-const Avatar = () => {
+const Avatar = (props) => {
     return (
        <div className='avatar'>
           <div>
