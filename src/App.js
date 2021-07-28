@@ -45,10 +45,11 @@ const App = () => {
    const postNewUser = (newUser) => {
       axios.post(apiPath, newUser).then((res) => {
          if (res.status === 200) {
-            setCurrentUser(res.data);
+            setCurrentUser(res.data);     // set currentUser
+            setLoggedIn(res.data)         // set loggedInUser
          } else {
-            MessageBar(res.data);
-            setShowMessageBar(true);
+            MessageBar(res.data);         // display informational message
+            setShowMessageBar(true);      // display message bar
          }
          console.log(res.data);
       }).catch((err) => console.log(err));
@@ -75,9 +76,10 @@ const App = () => {
    const handleUserSubmit = (event) => {
       event.preventDefault();
       if (register) {
-         setRegister(false);
+         postNewUser(newUser);   // add new user
+         setRegister(false);     // end registration mode
       } else {
-         setLoggedIn(true);
+         setLoggedIn(true);      // 
          document.getElementById('app').style.backgroundColor = '#999999';
          alert('submit form');
       }
