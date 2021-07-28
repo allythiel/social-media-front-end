@@ -44,25 +44,29 @@ const App = () => {
       await axios.get(apiPath).then((res) => { setUsers(res.data); console.log(res.data); }).catch((err) => console.log(err));
    }
 
+
    const postNewUser = async (newUser) => {
       await axios.post(apiPath, newUser).then((res) => { console.log(res.data); }).catch(err => {
-         if (err.response) {
+         if (err.response.status === 400) {
             console.log(err.response.data)
             setMessageText(err.response.data)
             setShowMessageBar(true);
             // client received an error response (5xx, 4xx)
-         } else if (err.request) {
-            // client never received a response, or request never left
          } else {
+            setMessageText('Oops! Something went wrong... Please try to register again.');
+            setShowMessageBar(true);
             // anything else
          }
       })
    }
 
+
    const postUserLogin = async (email) => {
       await axios.post(`${apiPath}/login`, email).then((res) => { setCurrentUser(res.data); setLoggedInUser(res.data) }).catch((err) => { console.log(err); });
    }
 
+
+   
    /**********************************************************
     *  USE EFFECTS
     **********************************************************/
