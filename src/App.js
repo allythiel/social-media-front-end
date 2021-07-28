@@ -36,21 +36,7 @@ const App = () => {
       getAllUsers();
    }, [])
 
-   const handleUserChange = (event) => {
-      event.persist();
-      setNewUser(prevNewUser => ({ ...prevNewUser, [event.target.name]: event.target.value }));
-      console.log(newUser);
-   }
-
-   const handleUserSubmit = (event) => {
-      event.preventDefault();
-      if (register) {   // new user registration
-         setRegister(false);
-      } else {          // existing user login
-         setLoggedIn(true);
-         document.getElementById('app').style.backgroundColor = '#999999';
-      }
-   }
+   
       
    console.log(users);
 
