@@ -3,6 +3,7 @@
     margin: 0;
     text-align: center;
     min-height: 900px;
+    min-width: 600px;
 }
 
 ul li {
