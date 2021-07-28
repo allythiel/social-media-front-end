@@ -15,7 +15,6 @@ import myFriends from './_demoData/friends.js'
 const App = () => {
    const [friends, setFriends] = useState(myFriends);
    const [users, setUsers] = useState(null);
-   //const [currentUser, setCurrentUser] = useState(null);
    const [newUser, setNewUser] = useState({
       name: '',
       email: '',
