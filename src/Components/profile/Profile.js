@@ -7,8 +7,8 @@ const Profile = (props) => {
     return (
         <div className='profile'>
           <h3>Profile</h3>
-          <Avatar />
-          <UserInfo aboutme={props.aboutme} name={props.name} />
+          <Avatar currentUser={props.currentUser} />
+          <UserInfo currentUser={props.currentUser} />
           <button className="button-md">Edit Profile</button>
         </div>
     )
