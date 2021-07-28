@@ -66,7 +66,7 @@ const App = () => {
    }
 
 
-   
+
    /**********************************************************
     *  USE EFFECTS
     **********************************************************/
@@ -74,48 +74,54 @@ const App = () => {
       getAllUsers();
    }, [])
 
+
    useEffect(() => {
       postNewUser(newUserData);
    }, [newUserData])
+
 
    useEffect(() => {
       postUserLogin(logonData);
    }, [logonData])
 
 
+
    /**********************************************************
    *  EVENT HANDLERS
    ***********************************************************/
-   const handleLoginAvatarClick = () => {
+   const handleLoginAvatarClick = () => {    // Banner component
       alert('avatar click');
       setLoggedIn(false);
       setCurrentUser(null);
       setLoggedInUser(null);
    }
 
-   const handleCloseMessageBar = () => {
+
+   const handleCloseMessageBar = () => {     // MessageBar component
       setShowMessageBar(false);
       setMessageText('');
    }
 
-   const handleUserChange = (event) => {
+
+   const handleUserChange = (event) => {     // AppLogin
       event.persist();
       setNewUser(prevNewUser => ({ ...prevNewUser, [event.target.name]: event.target.value }));
       console.log(newUser);
    }
 
-   const handleUserSubmit = (event) => {
+
+   const handleUserSubmit = (event) => {     // AppLogin
       event.preventDefault();
       if (register) {
-         setNewUserData(newUser);  // change triggers post new user Use Effect
-         setRegister(false);     // end registration mode
+         setNewUserData(newUser);   // change triggers post new user actions
+         setRegister(false);        // end registration mode
          setNewUser({
             name: '',
             email: '',
             password: '',
          });
       } else {
-         setlogonData({ email: newUser.email })
+         setlogonData({ email: newUser.email })   // change triggers user login actions
          setLoggedIn(true);
          setNewUser({
             name: '',
@@ -128,11 +134,12 @@ const App = () => {
    }
 
 
-
+/////////////// CONSOLE.LOGS /////////////////
    console.log(users);
    console.log('current user: ', currentUser);
    console.log('loggedInUser: ', loggedInUser);
 
+   
    return (
       <div id='app' className='App'>
          <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} handleLoginAvatarClick={handleLoginAvatarClick} />
@@ -140,7 +147,7 @@ const App = () => {
          <div className='content'>
             {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit}
                register={register} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
-            {loggedIn && <Main aboutme={aboutme} name={name} friends={friends} />}
+            {loggedIn && <Main loggedInUser={loggedInUser} currentUser={currentUser} aboutme={aboutme} name={name} friends={friends} />}
          </div>
          {/* <Footer /> */}
       </div>
