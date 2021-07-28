@@ -51,11 +51,6 @@ const App = () => {
             console.log(err.response.data)
             setMessageText(err.response.data)
             setShowMessageBar(true);
-            // client received an error response (5xx, 4xx)
-         } else {
-            setMessageText('Oops! Something went wrong... Please try to register again.');
-            setShowMessageBar(true);
-            // anything else
          }
       })
    }
@@ -139,10 +134,10 @@ const App = () => {
    console.log('current user: ', currentUser);
    console.log('loggedInUser: ', loggedInUser);
 
-   
+
    return (
       <div id='app' className='App'>
-         <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} handleLoginAvatarClick={handleLoginAvatarClick} />
+         <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} handleLoginAvatarClick={handleLoginAvatarClick} loggedInUser={loggedInUser} />
          {showMessageBar && <MessageBar messageText={messageText} setShowMessageBar={setShowMessageBar} handleCloseMessageBar={handleCloseMessageBar} />}
          <div className='content'>
             {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit}
