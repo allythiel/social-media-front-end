@@ -26,32 +26,46 @@ const App = () => {
    const [currentUser, setCurrentUser] = useState(null);
    const [loggedIn, setLoggedIn] = useState(false);
    const [register, setRegister] = useState(false);
-   //const [messageText, setMessageText] = useState('');
+   const [messageText, setMessageText] = useState('');
    const [showMessageBar, setShowMessageBar] = useState(true);
 
 
    const aboutme = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eos illum accusantium. Animi, consequuntur assumenda!';
    const name = 'Jaslyn Thomas';
 
-   /******************************
-       *  API routes
-       ******************************/
+   /**********************************************************
+    *  API ROUTES
+    **********************************************************/
    const apiPath = 'http://localhost:5000/api/users';
-
 
    const getAllUsers = () => {
       axios.get(apiPath).then((res) => { setUsers(res.data); console.log(res.data) }).catch((err) => console.log(err));
-      // axios.get(apiPath).then((res) => { console.log(res.data); }).catch((err) => console.log(err));
    }
 
    const postNewUser = (newUser) => {
-      axios.post(apiPath).then((res) => { setCurrentUser(res.data); console.log(res.data) }).catch((err) => console.log(err));
+      axios.post(apiPath, newUser).then((res) => {
+         if (res.status === 200) {
+            setCurrentUser(res.data);
+         } else {
+            MessageBar(res.data);
+            setShowMessageBar(true);
+         }
+         console.log(res.data);
+      }).catch((err) => console.log(err));
    }
 
+
+   /**********************************************************
+    *  USE EFFECTS
+    **********************************************************/
    useEffect(() => {
       getAllUsers();
    }, [])
 
+
+   /**********************************************************
+   *  EVENT HANDLERS
+   ***********************************************************/
    const handleUserChange = (event) => {
       event.persist();
       setNewUser(prevNewUser => ({ ...prevNewUser, [event.target.name]: event.target.value }));
@@ -68,6 +82,8 @@ const App = () => {
          alert('submit form');
       }
    }
+
+
 
    console.log(users);
 
