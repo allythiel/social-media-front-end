@@ -22,6 +22,8 @@ const App = () => {
       password2: ''
    })
 
+   const [loggedInUser, setLoggedInUser] = useState(null);
+   const [currentUser, setCurrentUser] = useState(null);
    const [loggedIn, setLoggedIn] = useState(false);
    const [register, setRegister] = useState(false);
    //const [messageText, setMessageText] = useState('');
@@ -38,8 +40,12 @@ const App = () => {
 
 
    const getAllUsers = () => {
-      axios.get(apiPath).then((res) => { setUsers(res.data); }).catch((err) => console.log(err));
+      axios.get(apiPath).then((res) => { setUsers(res.data); console.log(res.data) }).catch((err) => console.log(err));
       // axios.get(apiPath).then((res) => { console.log(res.data); }).catch((err) => console.log(err));
+   }
+
+   const postNewUser = (newUser) => {
+      axios.post(apiPath).then((res) => { setCurrentUser(res.data); console.log(res.data) }).catch((err) => console.log(err));
    }
 
    useEffect(() => {
