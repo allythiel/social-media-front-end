@@ -11,7 +11,8 @@
 
 .profile input[type='text'], .profile textarea {
    width: 100%;
-   font-size: 1.2em;
+   font-size: 1.1em;
+   color: var(--theme-medium);
    margin-bottom: 25px;
    padding-left: 10px;
    border: none;

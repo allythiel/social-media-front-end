@@ -8,6 +8,8 @@
     width: 100%;
     margin-bottom: 25px;
     height: 35px;
+    color: var(--theme-medium);
+    font-size: 1.1em;
     padding-left: 10px;
     border: none;
     border: 1px solid var(--theme-dark);
