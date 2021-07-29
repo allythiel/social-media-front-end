@@ -157,6 +157,7 @@ const App = () => {
    //handle new posting change (needs updating)
    const handleNewPostingChange = (event) => {
       setNewPosting (event.target.value);
+   }
 
       
 /////////////// CONSOLE.LOGS /////////////////
@@ -179,4 +180,5 @@ const App = () => {
    )
 }
 
-export default App
+
+export default App;
