@@ -29,6 +29,8 @@ const App = () => {
    const [register, setRegister] = useState(false);
    const [messageText, setMessageText] = useState('');
    const [showMessageBar, setShowMessageBar] = useState(false);
+   const [newPosting, setNewPosting] = useState('');
+   const [postings, setPostings] = useState(null);
 
 
    const aboutme = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eos illum accusantium. Animi, consequuntur assumenda!';
