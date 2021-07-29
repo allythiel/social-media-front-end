@@ -31,6 +31,7 @@ const App = () => {
    const [showMessageBar, setShowMessageBar] = useState(false);
    const [newPosting, setNewPosting] = useState('');
    const [postings, setPostings] = useState(null);
+   const [editProfile, setEditProfile] = useState(null);
 
 
    /**********************************************************
