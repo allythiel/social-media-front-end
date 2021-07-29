@@ -10,15 +10,11 @@ const Main = (props) => {
       <div className='main'>
          <div>
             <div>
-               <Profile aboutme={props.aboutme} name={props.name} />
-            </div>
-            <div>
-               <Timeline postings={props.postings} setPostings={props.setPostings} newPosting={props.newPosting} setNewPosting={props.setNewPosting} handleNewPostingChange={props.handleNewPostingChange} handleNewPostingSubmit={props.handleNewPostingSubmit} currentUser={props.currentUser} loggedInUser={props.loggedInUser} />
-               
                <Profile currentUser={props.currentUser} loggedInUser={props.loggedInUser} />
             </div>
             <div>
-               <Timeline currentUser={props.currentUser} loggedInUser={props.loggedInUser} />
+               <Timeline postings={props.postings} setPostings={props.setPostings} newPosting={props.newPosting} setNewPosting={props.setNewPosting} handleNewPostingChange={props.handleNewPostingChange} handleNewPostingSubmit={props.handleNewPostingSubmit} currentUser={props.currentUser} loggedInUser={props.loggedInUser} />
+
             </div>
             <div>
                <FriendsAllUsersList friends={props.friends} />
