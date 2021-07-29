@@ -31,9 +31,6 @@ const App = () => {
    const [showMessageBar, setShowMessageBar] = useState(false);
 
 
-   const aboutme = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eos illum accusantium. Animi, consequuntur assumenda!';
-   const name = 'Jaslyn Thomas';
-
    /**********************************************************
     *  API ROUTES
     **********************************************************/
