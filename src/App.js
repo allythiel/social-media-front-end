@@ -143,6 +143,7 @@ const App = () => {
    //handle new posting (needs updating)
    const handleNewPostingSubmit = (event) => {
       event.preventDefault();
+      alert('post something');
       const posting = {
          text: newPosting,
          likes: 0
@@ -190,9 +191,9 @@ const App = () => {
          <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} handleLoginAvatarClick={handleLoginAvatarClick} loggedInUser={loggedInUser} />
          {showMessageBar && <MessageBar messageText={messageText} setShowMessageBar={setShowMessageBar} handleCloseMessageBar={handleCloseMessageBar} />}
          <div className='content'>
-            {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit} handleNewPostingChange={handleNewPostingChange} handleNewPostingSubmit={handleNewPostingSubmit} newPosting={newPosting} setNewPosting={setNewPosting} postings={postings} setPostings={setPostings}
+            {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit} 
                register={register} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
-            {(loggedIn && currentUser) && <Main loggedInUser={loggedInUser} currentUser={currentUser} friends={friends} editProfile={editProfile} handleEditProfileChange={handleEditProfileChange} handleEditProfileSubmit={handleEditProfileSubmit} />}
+            {(loggedIn && currentUser) && <Main loggedInUser={loggedInUser} currentUser={currentUser} friends={friends} editProfile={editProfile} handleEditProfileChange={handleEditProfileChange} handleEditProfileSubmit={handleEditProfileSubmit} handleNewPostingChange={handleNewPostingChange} handleNewPostingSubmit={handleNewPostingSubmit} newPosting={newPosting} setNewPosting={setNewPosting} postings={postings} setPostings={setPostings}/>}
          </div>
          {/* <Footer /> */}
       </div>
