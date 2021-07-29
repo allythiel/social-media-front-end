@@ -61,7 +61,7 @@ const App = () => {
       await axios.post(`${apiPath}/login`, email).then((res) => { setCurrentUser(res.data); setLoggedInUser(res.data) }).catch((err) => { console.log(err); });
    }
 
-   // imported information below (GetPostings and PostNewPosting)
+   // imported information below (GetPostings and PostNewPosting NEEDS UPDATING)
    const getPostings = (userId) => {
       axios.get(`${apiPath}/${userId}`).then((res) => { setPostings(res.data)}).catch((err) => console.log(err));
    }
@@ -88,7 +88,11 @@ const App = () => {
       postUserLogin(logonData);
    }, [logonData])
 
-
+ // get User Posting Feed (NEEDS UPDATING)
+   useEffect(() => {
+      getPostings(currentUserId);
+      console.log('getPostings');
+   }, [currentUserId])
 
    /**********************************************************
    *  EVENT HANDLERS
