@@ -10,10 +10,10 @@ const Main = (props) => {
       <div className='main'>
          <div>
             <div>
-               <Profile currentUser={props.currentUser} />
+               <Profile currentUser={props.currentUser} loggedInUser={props.loggedInUser} />
             </div>
             <div>
-               <Timeline currentUser={props.currentUser} />
+               <Timeline currentUser={props.currentUser} loggedInUser={props.loggedInUser} />
             </div>
             <div>
                <FriendsAllUsersList currentUser={props.currentUser} loggedInUser={props.loggedInUser} friends={props.friends} />
