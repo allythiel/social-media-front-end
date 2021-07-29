@@ -141,7 +141,25 @@ const App = () => {
       }
    }
 
+   //handle new posting
+   const handleNewPostingSubmit = (event) => {
+      event.preventDefault();
+      const posting = {
+         text: newPosting,
+         likes: 0
+      }
+      postNewPosting(posting);
+      console.log(posting);
+      console.log('my posts',users[0].post)
+      
 
+   }
+
+   //handle new posting change
+   const handleNewPostingChange = (event) => {
+      setNewPosting (event.target.value);
+
+      
 /////////////// CONSOLE.LOGS /////////////////
    console.log(users);
    console.log('current user: ', currentUser);
