@@ -61,7 +61,15 @@ const App = () => {
       await axios.post(`${apiPath}/login`, email).then((res) => { setCurrentUser(res.data); setLoggedInUser(res.data) }).catch((err) => { console.log(err); });
    }
 
+   // imported information below (GetPostings and PostNewPosting)
+   const getPostings = (userId) => {
+      axios.get(`${apiPath}/${userId}`).then((res) => { setPostings(res.data)}).catch((err) => console.log(err));
+   }
 
+   //add New Posting
+   const postNewPosting = (data) => {
+      return axios.post(`${apiPath}`, data).then((res) => (res.data)).catch((err) => console.log(err));
+   }
 
    /**********************************************************
     *  USE EFFECTS
