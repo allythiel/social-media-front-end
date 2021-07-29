@@ -62,13 +62,13 @@ const App = () => {
    }
 
    // imported information below (GetPostings and PostNewPosting NEEDS UPDATING)
-   const getPostings = (userId) => {
-      axios.get(`${apiPath}/${userId}`).then((res) => { setPostings(res.data)}).catch((err) => console.log(err));
+   const getPostings = async (currentUser) => {
+      await axios.get(`${apiPath}/${currentUser}`).then((res) => { setPostings(res.data) }).catch((err) => {console.log(err); });
    }
 
    //add New Posting
-   const postNewPosting = (data) => {
-      return axios.post(`${apiPath}`, data).then((res) => (res.data)).catch((err) => console.log(err));
+   const postNewPosting = async (data) => {
+      await axios.post(`${apiPath}`, data).then((res) => (res.data)).catch((err) => console.log(err));
    }
 
    /**********************************************************
@@ -88,11 +88,11 @@ const App = () => {
       postUserLogin(logonData);
    }, [logonData])
 
- // get User Posting Feed (NEEDS UPDATING)
+ // get User Posting Feed 
    useEffect(() => {
-      getPostings(currentUserId);
+      getPostings(currentUser);
       console.log('getPostings');
-   }, [currentUserId])
+   }, [currentUser])
 
    /**********************************************************
    *  EVENT HANDLERS
