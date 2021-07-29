@@ -56,7 +56,7 @@ const App = () => {
 
 
    const postUserLogin = async (email) => {
-      await axios.post(`${apiPath}/login`, email).then((res) => { setCurrentUser(res.data); setLoggedInUser(res.data) }).catch((err) => { console.log(err); });
+      await axios.post(`${apiPath}/login`, email).then((res) => { setLoggedInUser(res.data); setCurrentUser(res.data); }).catch((err) => { console.log(err); });
    }
 
 
@@ -141,7 +141,7 @@ const App = () => {
          <div className='content'>
             {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit}
                register={register} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
-            {(loggedIn && currentUser) && <Main loggedInUser={loggedInUser} currentUser={currentUser} aboutme={aboutme} name={name} friends={friends} />}
+            {(loggedIn && currentUser) && <Main loggedInUser={loggedInUser} currentUser={currentUser} friends={friends} />}
          </div>
          {/* <Footer /> */}
       </div>
