@@ -150,7 +150,7 @@ const App = () => {
       }
       postNewPosting(posting);
       console.log(posting);
-      console.log('my posts',users[0].post)
+      console.log('my posts',users[0].posts)
    
    }
 
