@@ -33,9 +33,6 @@ const App = () => {
    const [postings, setPostings] = useState(null);
 
 
-   const aboutme = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eos illum accusantium. Animi, consequuntur assumenda!';
-   const name = 'Jaslyn Thomas';
-
    /**********************************************************
     *  API ROUTES
     **********************************************************/
@@ -58,7 +55,7 @@ const App = () => {
 
 
    const postUserLogin = async (email) => {
-      await axios.post(`${apiPath}/login`, email).then((res) => { setCurrentUser(res.data); setLoggedInUser(res.data) }).catch((err) => { console.log(err); });
+      await axios.post(`${apiPath}/login`, email).then((res) => { setLoggedInUser(res.data); setCurrentUser(res.data); }).catch((err) => { console.log(err); });
    }
 
    // imported information below (GetPostings and PostNewPosting NEEDS UPDATING)
@@ -173,7 +170,7 @@ const App = () => {
          <div className='content'>
             {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit} handleNewPostingChange={handleNewPostingChange} handleNewPostingSubmit={handleNewPostingSubmit} newPosting={newPosting} setNewPosting={setNewPosting} postings={postings} setPostings={setPostings}
                register={register} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
-            {(loggedIn && currentUser) && <Main loggedInUser={loggedInUser} currentUser={currentUser} aboutme={aboutme} name={name} friends={friends} />}
+            {(loggedIn && currentUser) && <Main loggedInUser={loggedInUser} currentUser={currentUser} friends={friends} />}
          </div>
          {/* <Footer /> */}
       </div>
