@@ -17,8 +17,8 @@ const Profile = (props) => {
 
          {/* edit profile mode */}
          {(editMode && (props.loggedInUser.email === props.currentUser.email)) && <form onSubmit={(event) => { event.preventDefault() }}>
-            <input type="text" name='name' placeholder='Your name' value={props.editProfile.name} /><br />
-            <input type="text" name='aboutme' placeholder='Tell us all about you' value={props.editProfile.aboutMe} />
+            <input type="text" name='name' placeholder={props.loggedInUser.name} value={props.editProfile.name} /><br />
+            <textarea name='aboutme' rows={4} placeholder='Tell us all about you' value={props.editProfile.aboutMe} />
          </form>}
          {(editMode && (props.loggedInUser.email === props.currentUser.email)) && <button className="button-md" onClick={() => { setEditMode(false) }}>Save Changes</button>}
       </div>

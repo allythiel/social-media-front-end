@@ -31,7 +31,7 @@ const App = () => {
    const [showMessageBar, setShowMessageBar] = useState(false);
    const [newPosting, setNewPosting] = useState('');
    const [postings, setPostings] = useState(null);
-   const [editProfile, setEditProfile] = useState(null);
+   const [editProfile, setEditProfile] = useState({name: '', aboutMe: ''});
 
 
    /**********************************************************
@@ -161,12 +161,19 @@ const App = () => {
 
 
    const handleEditProfileChange = (event) => {
-
+      event.persist();
+      setEditProfile(prevEditProfile => ({ ...prevEditProfile, [event.target.name]: event.target.value }));
+   
    }
 
 
    const handleEditProfileSubmit = (event) => {
       event.preventDefault();
+
+      setEditProfile({
+         name: '',
+         aboutMe: ''
+      });
    }
 
 
