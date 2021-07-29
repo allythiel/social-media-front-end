@@ -10,13 +10,13 @@ const Main = (props) => {
       <div className='main'>
          <div>
             <div>
-               <Profile currentUser={props.currentUser} />
+               <Profile aboutme={props.aboutme} name={props.name} />
             </div>
             <div>
-               <Timeline currentUser={props.currentUser} />
+               <Timeline postings={props.postings} setPostings={props.setPostings} newPosting={props.newPosting} setNewPosting={props.setNewPosting} handleNewPostingChange={props.handleNewPostingChange} handleNewPostingSubmit={props.handleNewPostingSubmit} />
             </div>
             <div>
-               <FriendsAllUsersList currentUser={props.currentUser} loggedInUser={props.loggedInUser} friends={props.friends} />
+               <FriendsAllUsersList friends={props.friends} />
             </div>
          </div>
       </div>
@@ -24,3 +24,4 @@ const Main = (props) => {
 }
 
 export default Main
+
