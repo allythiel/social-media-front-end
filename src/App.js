@@ -141,7 +141,7 @@ const App = () => {
       }
    }
 
-   //handle new posting
+   //handle new posting (needs updating)
    const handleNewPostingSubmit = (event) => {
       event.preventDefault();
       const posting = {
@@ -151,11 +151,10 @@ const App = () => {
       postNewPosting(posting);
       console.log(posting);
       console.log('my posts',users[0].post)
-      
-
+   
    }
 
-   //handle new posting change
+   //handle new posting change (needs updating)
    const handleNewPostingChange = (event) => {
       setNewPosting (event.target.value);
 
@@ -171,7 +170,7 @@ const App = () => {
          <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} handleLoginAvatarClick={handleLoginAvatarClick} loggedInUser={loggedInUser} />
          {showMessageBar && <MessageBar messageText={messageText} setShowMessageBar={setShowMessageBar} handleCloseMessageBar={handleCloseMessageBar} />}
          <div className='content'>
-            {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit}
+            {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit} handleNewPostingChange={handleNewPostingChange} handleNewPostingSubmit={handleNewPostingSubmit} newPosting={newPosting} setNewPosting={setNewPosting} postings={postings} setPostings={setPostings}
                register={register} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
             {(loggedIn && currentUser) && <Main loggedInUser={loggedInUser} currentUser={currentUser} aboutme={aboutme} name={name} friends={friends} />}
          </div>
