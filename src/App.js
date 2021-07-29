@@ -61,7 +61,7 @@ const App = () => {
 
    // imported information below (GetPostings and PostNewPosting NEEDS UPDATING)
    const getPostings = async (currentUser) => {
-      await axios.get(`${apiPath}/${currentUser}`).then((res) => { setPostings(res.data) }).catch((err) => {console.log(err); });
+      await axios.get(`${apiPath}/${currentUser}`).then((res) => { setPostings(res.data) }).catch((err) => { console.log(err); });
    }
 
    //add New Posting
@@ -86,7 +86,7 @@ const App = () => {
       postUserLogin(logonData);
    }, [logonData])
 
- // get User Posting Feed 
+   // get User Posting Feed 
    useEffect(() => {
       getPostings(currentUser);
       console.log('getPostings');
@@ -139,6 +139,7 @@ const App = () => {
       }
    }
 
+
    //handle new posting (needs updating)
    const handleNewPostingSubmit = (event) => {
       event.preventDefault();
@@ -148,17 +149,30 @@ const App = () => {
       }
       postNewPosting(posting);
       console.log(posting);
-      console.log('my posts',users[0].posts)
-   
+      console.log('my posts', users[0].posts)
+
    }
+
 
    //handle new posting change (needs updating)
    const handleNewPostingChange = (event) => {
-      setNewPosting (event.target.value);
+      setNewPosting(event.target.value);
    }
 
-      
-/////////////// CONSOLE.LOGS /////////////////
+
+   const handleEditProfileChange = (event) => {
+
+   }
+
+
+   const handleEditProfileSubmit = (event) => {
+      event.preventDefault();
+   }
+
+
+
+
+   /////////////// CONSOLE.LOGS /////////////////
    console.log(users);
    console.log('current user: ', currentUser);
    console.log('loggedInUser: ', loggedInUser);
@@ -171,7 +185,7 @@ const App = () => {
          <div className='content'>
             {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit} handleNewPostingChange={handleNewPostingChange} handleNewPostingSubmit={handleNewPostingSubmit} newPosting={newPosting} setNewPosting={setNewPosting} postings={postings} setPostings={setPostings}
                register={register} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
-            {(loggedIn && currentUser) && <Main loggedInUser={loggedInUser} currentUser={currentUser} friends={friends} />}
+            {(loggedIn && currentUser) && <Main loggedInUser={loggedInUser} currentUser={currentUser} friends={friends} editProfile={editProfile} handleEditProfileChange={handleEditProfileChange} handleEditProfileSubmit={handleEditProfileSubmit} />}
          </div>
          {/* <Footer /> */}
       </div>
