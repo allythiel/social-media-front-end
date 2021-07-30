@@ -10,9 +10,11 @@ const FriendsAllUsersList = (props) => {
       setToggle (!toggle)
       console.log(toggle)
    }
+   const buttonText = toggle ? 'All Users' : 'Friends';  // change button text on toggle
+   
    return (
       <div className='friends-all-users-list'> 
-      <button className="button-md register" onClick={() => { changeDisplay()}}>Friends/Users</button>
+      <button className="button-md toggle-button" onClick={() => { changeDisplay()}}>{buttonText}</button>
         {toggle && <FriendsList changeUser={props.changeUser} friends={props.friends} />}
         {!toggle && <AllUsersList changeUser={props.changeUser} users={props.users} />}
        

@@ -1,5 +1,5 @@
-import  {useState} from 'react'
- import React from 'react';
+import React from 'react';
+import avatarPlaceholder from '../../../images/avatar-placeholder.png'
 import './allUsersList.css';
 
 const AllUsersList = (props) => {
@@ -12,19 +12,21 @@ const AllUsersList = (props) => {
    // }
 //////////////////////////////////////////////////////
 
-   const users = props.users.map((user, index) => {
+   const allUsers = props.users.map((user, index) => {
       return (
          <li key={index}>
-         <div className="avatar-inline"><img src={user.avatar} alt=''></img></div>
-         <div onClick={() => { props.changeUser(user)}}><div className='friend-name'>{user.name}</div></div>
+            {/* <div className="avatar-inline"><img src={user.avatar} alt=''></img></div> */}
+            <div className="avatar-inline"><img src={avatarPlaceholder} alt=''></img></div>
+
+         <div onClick={() => { props.changeUser(user)}}><div className='user-name'>{user.name}</div></div>
       </li>
       )
    })
    return (
-      <div className='friends-list'>
+      <div className='all-users-list'>
          <h3>All user List</h3>
          <ul>
-            {users} 
+            {allUsers} 
          </ul>
       </div>
    )
