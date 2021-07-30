@@ -10,7 +10,7 @@ const BannerActionBar = (props) => {
          <div className='button-md'>
             <div className='request-pending'>{props.loggedInUser.friendRequestIn.length}</div>
             <div className='request-text'>Friend Request</div>
-            <div>{props.loggedInUser.email !== props.currentUser.email}<AddCircleOutlineIcon /></div>
+            <div>{props.loggedInUser.email !== props.currentUser.email && <AddCircleOutlineIcon />}</div>
          </div>
 
          <div className="login"><img onClick={props.handleLoginAvatarClick} src={loginAvatar}
