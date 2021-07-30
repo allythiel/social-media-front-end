@@ -24,7 +24,7 @@ const AllUsersList = (props) => {
    })
    return (
       <div className='all-users-list'>
-         <h3>All user List</h3>
+         <h3>All Users List</h3>
          <ul>
             {allUsers} 
          </ul>
