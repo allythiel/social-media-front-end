@@ -61,7 +61,6 @@ const App = () => {
       await axios.post(`${apiPath}/login`, email).then((res) => { setLoggedInUser(res.data); setCurrentUser(res.data); }).catch((err) => { console.log(err); });
    }
 
-   // imported information below (GetPostings and PostNewPosting NEEDS UPDATING)
    const getPostings = async (currentUser) => {
       await axios.get(`${apiPath}/${currentUser}`).then((res) => { setPostings(res.data) }).catch((err) => { console.log(err); });
    }
@@ -145,23 +144,23 @@ const App = () => {
       console.log('tempUser', currentUser)  
    }
 
-   //handle new posting (needs updating)
+   //handle new posting 
    const handleNewPostingSubmit = (event) => {
       event.preventDefault();
       alert('post something');
       const posting = {
          post: newPosting,
-         author: currentUser.name,
+         author: loggedInUser.name,
          likes: 0
       }
       postNewPosting(currentUser._id, posting);
       console.log(posting);
-      console.log('user id', currentUser._id)
+      console.log('user id', loggedInUser._id)
       // getPostings(currentUser._id);
       // console.log("updated user", currentUser)
    }
 
-   //handle new posting change (needs updating)
+   //handle new posting change 
    const handleNewPostingChange = (event) => {
       setNewPosting(event.target.value);
    }
