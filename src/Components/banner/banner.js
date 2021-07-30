@@ -7,11 +7,11 @@ const Banner = (props) => {
    return (
       <div className='banner'>
          <div>
-            <div><img src={logo} alt="" /></div>
+            <div><img src={logo} alt="" onClick={()=>{props.setCurrentUser(props.loggedInUser)}} /></div>
             <div><h1>Weave<span>Social</span></h1><p>Online Community for Aspiring Basket Weavers</p></div>
          </div>
          <div>
-            {(props.loggedIn && props.loggedInUser) && <BannerActionBar loggedIn={props.loggedIn} setLoggedIn={props.setLoggedIn} handleLoginAvatarClick={props.handleLoginAvatarClick} loggedInUser={props.loggedInUser} />}
+            {(props.loggedIn && props.loggedInUser && props.currentUser) && <BannerActionBar loggedIn={props.loggedIn} setLoggedIn={props.setLoggedIn} handleLoginAvatarClick={props.handleLoginAvatarClick} loggedInUser={props.loggedInUser} currentUser={props.currentUser} /> }
          </div>
       </div>
    )

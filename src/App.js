@@ -193,7 +193,7 @@ const App = () => {
 
    return (
       <div id='app' className='App'>
-         <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} handleLoginAvatarClick={handleLoginAvatarClick} loggedInUser={loggedInUser} />
+         <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} setCurrentUser={setCurrentUser} currentUser={currentUser} handleLoginAvatarClick={handleLoginAvatarClick} loggedInUser={loggedInUser} />
          {showMessageBar && <MessageBar messageText={messageText} setShowMessageBar={setShowMessageBar} handleCloseMessageBar={handleCloseMessageBar} />}
          <div className='content'>
             {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit} 
