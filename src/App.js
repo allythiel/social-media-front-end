@@ -227,7 +227,7 @@ const App = () => {
             {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit} 
                register={register} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
           
-            {(loggedIn && currentUser) && <Main changeUser={changeUser} users={users} loggedInUser={loggedInUser} currentUser={currentUser} friends={friends} editProfile={editProfile} handleEditProfileChange={handleEditProfileChange} handleEditProfileSubmit={handleEditProfileSubmit} handleNewPostingChange={handleNewPostingChange} handleNewPostingSubmit={handleNewPostingSubmit} newPosting={newPosting} setNewPosting={setNewPosting} postings={postings} setPostings={setPostings} handleLike={handleLike}/>}
+            {(loggedIn && currentUser) && <Main changeUser={changeUser} users={users} loggedInUser={loggedInUser} currentUser={currentUser} friends={friends} editProfile={editProfile} handleEditProfileChange={handleEditProfileChange} handleEditProfileSubmit={handleEditProfileSubmit} handleNewPostingChange={handleNewPostingChange} handleNewPostingSubmit={handleNewPostingSubmit} newPosting={newPosting} setNewPosting={setNewPosting} postings={postings} setPostings={setPostings} handleLike={handleLike} loggedIn={loggedIn} setLoggedIn={setLoggedIn} setCurrentUser={setCurrentUser} />}
          </div>
          {/* <Footer /> */}
       </div>

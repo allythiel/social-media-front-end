@@ -5,7 +5,7 @@ import './timeline.css';
 
 const Timeline = (props) => {
    const allPosts = props.currentUser.posts.map((post) => {
-      return (<li><UserPost userPost={post} /></li>
+      return (<li><UserPost userPost={post} handleLike={props.handleLike} postings={props.postings} currentUser={props.currentUser} setCurrentUser={props.setCurrentUser}/></li>
       )
    })
 
@@ -17,7 +17,7 @@ const Timeline = (props) => {
          </div>
          <div>
             <ul>
-               {allPosts}
+               {allPosts} 
             </ul>
 
             {/* <UserPost name='Bradley Cooper'/>
