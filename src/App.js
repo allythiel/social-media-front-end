@@ -30,7 +30,7 @@ const App = () => {
    const [messageText, setMessageText] = useState('');
    const [showMessageBar, setShowMessageBar] = useState(false);
    const [newPosting, setNewPosting] = useState('');
-   const [postings, setPostings] = useState(null);
+   const [postings, setPostings] = useState([]);
    const [editProfile, setEditProfile] = useState({name: '', aboutMe: ''});
 
   
@@ -67,8 +67,8 @@ const App = () => {
    }
 
    //add New Posting
-   const postNewPosting = async (data) => {
-      await axios.post(`${apiPath}`, data).then((res) => (res.data)).catch((err) => console.log(err));
+   const postNewPosting = async (id,data) => {
+      await axios.post(`${apiPath}/${id}/post`, data).then((res) => (res.data)).catch((err) => console.log(err));
    }
 
    /**********************************************************
@@ -150,15 +150,16 @@ const App = () => {
       event.preventDefault();
       alert('post something');
       const posting = {
-         text: newPosting,
+         post: newPosting,
+         author: currentUser.name,
          likes: 0
       }
-      postNewPosting(posting);
+      postNewPosting(currentUser._id, posting);
       console.log(posting);
-      console.log('my posts', users[0].posts)
-
+      console.log('user id', currentUser._id)
+      // getPostings(currentUser._id);
+      // console.log("updated user", currentUser)
    }
-
 
    //handle new posting change (needs updating)
    const handleNewPostingChange = (event) => {
