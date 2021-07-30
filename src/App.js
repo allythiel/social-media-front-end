@@ -147,7 +147,6 @@ const App = () => {
    //handle new posting 
    const handleNewPostingSubmit = (event) => {
       event.preventDefault();
-      alert('post something');
       const posting = {
          post: newPosting,
          author: loggedInUser.name,
