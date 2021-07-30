@@ -16,7 +16,7 @@ const Main = (props) => {
                <Timeline currentUser={props.currentUser} />
             </div>
             <div>
-               <FriendsAllUsersList currentUser={props.currentUser} loggedInUser={props.loggedInUser } friends={props.friends} />
+               <FriendsAllUsersList changeUser={props.changeUser} currentUser={props.currentUser} loggedInUser={props.loggedInUser } friends={props.friends} users={props.users} />
             </div>
          </div>
       </div>

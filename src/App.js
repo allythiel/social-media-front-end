@@ -20,7 +20,7 @@ const App = () => {
       email: '',
       password: '',
    })
-
+   
    const [loggedInUser, setLoggedInUser] = useState(null);
    const [currentUser, setCurrentUser] = useState(null);
    const [newUserData, setNewUserData] = useState(null);
@@ -30,6 +30,8 @@ const App = () => {
    const [messageText, setMessageText] = useState('');
    const [showMessageBar, setShowMessageBar] = useState(false);
 
+  
+  
 
    const aboutme = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eos illum accusantium. Animi, consequuntur assumenda!';
    const name = 'Jaslyn Thomas';
@@ -58,7 +60,8 @@ const App = () => {
    const postUserLogin = async (email) => {
       await axios.post(`${apiPath}/login`, email).then((res) => { setCurrentUser(res.data); setLoggedInUser(res.data) }).catch((err) => { console.log(err); });
    }
-
+  
+   
 
 
    /**********************************************************
@@ -126,7 +129,10 @@ const App = () => {
          //alert('submit form');
       }
    }
-
+   const changeUser = (user) => {
+      setCurrentUser (user)
+      console.log('tempUser', currentUser)  
+   }
 
 /////////////// CONSOLE.LOGS /////////////////
    console.log(users);
@@ -141,7 +147,7 @@ const App = () => {
          <div className='content'>
             {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit}
                register={register} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
-            {(loggedIn && currentUser) && <Main loggedInUser={loggedInUser} currentUser={currentUser} aboutme={aboutme} name={name} friends={friends} />}
+            {(loggedIn && currentUser) && <Main changeUser={changeUser}  loggedInUser={loggedInUser} currentUser={currentUser} aboutme={aboutme} name={name} friends={friends} users={users}/>}
          </div>
          {/* <Footer /> */}
       </div>

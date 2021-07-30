@@ -1,7 +1,8 @@
 import React from 'react';
 import './friendsList.css';
 
-const FriendsList = (props) => {
+const FriendsList = (props) => { 
+   
    const friends = props.friends.map((friend, index) => {
       return (
          <li key={index}>
