@@ -4,7 +4,7 @@ import './likesBar.css';
 
 const LikesBar = (props) => {
    return (
-      <div className='likes-bar' onClick={()=>{alert('Likes')}}>
+      <div className='likes-bar' onClick={() => { alert('Likes') }}>
          <FavoriteIcon fontSize='small' />&nbsp;Like
       </div>
    )
