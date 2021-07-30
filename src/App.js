@@ -155,8 +155,8 @@ const App = () => {
       postNewPosting(currentUser._id, posting);
       console.log(posting);
       console.log('user id', loggedInUser._id)
-      // getPostings(currentUser._id);
-      // console.log("updated user", currentUser)
+      getPostings(posting);
+      console.log("updated user", currentUser)
    }
 
    //handle new posting change 

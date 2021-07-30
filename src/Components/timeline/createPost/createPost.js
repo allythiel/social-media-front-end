@@ -13,11 +13,11 @@ const CreatePost = (props) => {
                   props.handleNewPostingSubmit(event)
                }
             }>
-               <textarea name='posting'
+               <input type='text' name='posting'
                   rows={3}
                   onChange={props.handleNewPostingChange}
                   value={props.newPosting}
-                  placeholder='Add a new posting ...'></textarea>
+                  placeholder='Add a new posting ...'></input>
             </form>
          </div>
       </div>
