@@ -31,6 +31,7 @@ const App = () => {
    const [showMessageBar, setShowMessageBar] = useState(false);
    const [newPosting, setNewPosting] = useState('');
    const [postings, setPostings] = useState([]);
+   const [postingCount, setPostingCount] = useState(0);
    const [editProfile, setEditProfile] = useState({name: '', aboutMe: ''});
 
   
@@ -70,6 +71,15 @@ const App = () => {
       await axios.post(`${apiPath}/${id}/post`, data).then((res) => (res.data)).catch((err) => console.log(err));
    }
 
+   //get Postings by Current User
+   const getPostsByCurrentUser = (currentUser) => {
+      axios.get(`${apiPath}/${currentUser}/posts`).then((res) => { setPostings(res.data); setPostingCount(res.data.length) }).catch((err) => console.log(err));
+   }
+
+   const putPostingById = (currentUser, postId, data) => {
+      return axios.put(`${apiPath}/${currentUser}/${postId}/likes`, data).then((res) => (res.data)).catch((err) => console.log(err));
+   }
+
    /**********************************************************
     *  USE EFFECTS
     **********************************************************/
@@ -92,6 +102,13 @@ const App = () => {
       getPostings(currentUser);
       console.log('getPostings');
    }, [currentUser])
+
+   //get Postings by Current User
+   useEffect(() => {
+      getPostsByCurrentUser(currentUser);
+      console.log('getPostsByCurrentUser');
+   }, [currentUser])
+
 
    /**********************************************************
    *  EVENT HANDLERS
@@ -181,6 +198,18 @@ const App = () => {
       });
    }
 
+   const handleLike = (postId, index) => {
+      const selectedPosting = postings[index];
+      const data = {
+         post: selectedPosting.post,
+         author: selectedPosting.name,
+         likes: selectedPosting.likes + 1,
+      }
+      putPostingById(postId, data);
+      const newPostings = [...postings];
+      newPostings[index] = data;
+      setPostings(newPostings);
+   }
 
 
 
@@ -198,7 +227,7 @@ const App = () => {
             {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit} 
                register={register} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
           
-            {(loggedIn && currentUser) && <Main changeUser={changeUser} users={users} loggedInUser={loggedInUser} currentUser={currentUser} friends={friends} editProfile={editProfile} handleEditProfileChange={handleEditProfileChange} handleEditProfileSubmit={handleEditProfileSubmit} handleNewPostingChange={handleNewPostingChange} handleNewPostingSubmit={handleNewPostingSubmit} newPosting={newPosting} setNewPosting={setNewPosting} postings={postings} setPostings={setPostings}/>}
+            {(loggedIn && currentUser) && <Main changeUser={changeUser} users={users} loggedInUser={loggedInUser} currentUser={currentUser} friends={friends} editProfile={editProfile} handleEditProfileChange={handleEditProfileChange} handleEditProfileSubmit={handleEditProfileSubmit} handleNewPostingChange={handleNewPostingChange} handleNewPostingSubmit={handleNewPostingSubmit} newPosting={newPosting} setNewPosting={setNewPosting} postings={postings} setPostings={setPostings} handleLike={handleLike}/>}
          </div>
          {/* <Footer /> */}
       </div>
