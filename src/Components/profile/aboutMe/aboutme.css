@@ -1,7 +1,6 @@
 .about-me {
    min-height: 50px;
-   margin-top: 25px;
-   padding: 10px;
+   margin-top: 40px;
    margin: auto;
    margin-bottom: 20px;
    
@@ -9,7 +8,7 @@
 
 .about-me h4, .about-me p {
    text-align: left;
-   padding: 5px;
+   padding-top: 10px;
 }
 
 .about-me h4 {

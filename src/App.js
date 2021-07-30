@@ -29,12 +29,12 @@ const App = () => {
    const [register, setRegister] = useState(false);
    const [messageText, setMessageText] = useState('');
    const [showMessageBar, setShowMessageBar] = useState(false);
+   const [newPosting, setNewPosting] = useState('');
+   const [postings, setPostings] = useState(null);
+   const [editProfile, setEditProfile] = useState({name: '', aboutMe: ''});
 
   
   
-
-   const aboutme = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eos illum accusantium. Animi, consequuntur assumenda!';
-   const name = 'Jaslyn Thomas';
 
    /**********************************************************
     *  API ROUTES
@@ -58,11 +58,18 @@ const App = () => {
 
 
    const postUserLogin = async (email) => {
-      await axios.post(`${apiPath}/login`, email).then((res) => { setCurrentUser(res.data); setLoggedInUser(res.data) }).catch((err) => { console.log(err); });
+      await axios.post(`${apiPath}/login`, email).then((res) => { setLoggedInUser(res.data); setCurrentUser(res.data); }).catch((err) => { console.log(err); });
    }
-  
-   
 
+   // imported information below (GetPostings and PostNewPosting NEEDS UPDATING)
+   const getPostings = async (currentUser) => {
+      await axios.get(`${apiPath}/${currentUser}`).then((res) => { setPostings(res.data) }).catch((err) => { console.log(err); });
+   }
+
+   //add New Posting
+   const postNewPosting = async (data) => {
+      await axios.post(`${apiPath}`, data).then((res) => (res.data)).catch((err) => console.log(err));
+   }
 
    /**********************************************************
     *  USE EFFECTS
@@ -81,7 +88,11 @@ const App = () => {
       postUserLogin(logonData);
    }, [logonData])
 
-
+   // get User Posting Feed 
+   useEffect(() => {
+      getPostings(currentUser);
+      console.log('getPostings');
+   }, [currentUser])
 
    /**********************************************************
    *  EVENT HANDLERS
@@ -134,7 +145,47 @@ const App = () => {
       console.log('tempUser', currentUser)  
    }
 
-/////////////// CONSOLE.LOGS /////////////////
+   //handle new posting (needs updating)
+   const handleNewPostingSubmit = (event) => {
+      event.preventDefault();
+      alert('post something');
+      const posting = {
+         text: newPosting,
+         likes: 0
+      }
+      postNewPosting(posting);
+      console.log(posting);
+      console.log('my posts', users[0].posts)
+
+   }
+
+
+   //handle new posting change (needs updating)
+   const handleNewPostingChange = (event) => {
+      setNewPosting(event.target.value);
+   }
+
+
+   const handleEditProfileChange = (event) => {
+      event.persist();
+      setEditProfile(prevEditProfile => ({ ...prevEditProfile, [event.target.name]: event.target.value }));
+   
+   }
+
+
+   const handleEditProfileSubmit = (event) => {
+      event.preventDefault();
+
+      setEditProfile({
+         name: '',
+         aboutMe: ''
+      });
+   }
+
+
+
+
+   /////////////// CONSOLE.LOGS /////////////////
    console.log(users);
    console.log('current user: ', currentUser);
    console.log('loggedInUser: ', loggedInUser);
@@ -145,13 +196,15 @@ const App = () => {
          <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} handleLoginAvatarClick={handleLoginAvatarClick} loggedInUser={loggedInUser} />
          {showMessageBar && <MessageBar messageText={messageText} setShowMessageBar={setShowMessageBar} handleCloseMessageBar={handleCloseMessageBar} />}
          <div className='content'>
-            {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit}
+            {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit} 
                register={register} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
-            {(loggedIn && currentUser) && <Main changeUser={changeUser}  loggedInUser={loggedInUser} currentUser={currentUser} aboutme={aboutme} name={name} friends={friends} users={users}/>}
+            {(loggedIn && currentUser) && <Main changeUser={changeUser}  loggedInUser={loggedInUser} currentUser={currentUser} friends={friends} users={users}/>}
+            {(loggedIn && currentUser) && <Main loggedInUser={loggedInUser} currentUser={currentUser} friends={friends} editProfile={editProfile} handleEditProfileChange={handleEditProfileChange} handleEditProfileSubmit={handleEditProfileSubmit} handleNewPostingChange={handleNewPostingChange} handleNewPostingSubmit={handleNewPostingSubmit} newPosting={newPosting} setNewPosting={setNewPosting} postings={postings} setPostings={setPostings}/>}
          </div>
          {/* <Footer /> */}
       </div>
    )
 }
 
-export default App
+
+export default App;
