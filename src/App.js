@@ -198,8 +198,8 @@ const App = () => {
          <div className='content'>
             {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit} 
                register={register} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
-            {(loggedIn && currentUser) && <Main changeUser={changeUser}  loggedInUser={loggedInUser} currentUser={currentUser} friends={friends} users={users}/>}
-            {(loggedIn && currentUser) && <Main loggedInUser={loggedInUser} currentUser={currentUser} friends={friends} editProfile={editProfile} handleEditProfileChange={handleEditProfileChange} handleEditProfileSubmit={handleEditProfileSubmit} handleNewPostingChange={handleNewPostingChange} handleNewPostingSubmit={handleNewPostingSubmit} newPosting={newPosting} setNewPosting={setNewPosting} postings={postings} setPostings={setPostings}/>}
+          
+            {(loggedIn && currentUser) && <Main changeUser={changeUser} users={users} loggedInUser={loggedInUser} currentUser={currentUser} friends={friends} editProfile={editProfile} handleEditProfileChange={handleEditProfileChange} handleEditProfileSubmit={handleEditProfileSubmit} handleNewPostingChange={handleNewPostingChange} handleNewPostingSubmit={handleNewPostingSubmit} newPosting={newPosting} setNewPosting={setNewPosting} postings={postings} setPostings={setPostings}/>}
          </div>
          {/* <Footer /> */}
       </div>
