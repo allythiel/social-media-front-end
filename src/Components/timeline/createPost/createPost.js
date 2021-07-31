@@ -13,7 +13,7 @@ const CreatePost = (props) => {
                   props.handleNewPostingSubmit(event)
                }
             }>
-               <textarea name='posting'
+               <textarea className='post-text' name='posting'
                   rows={3}
                   onChange={props.handleNewPostingChange}
                   value={props.newPosting}

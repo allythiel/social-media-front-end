@@ -2,7 +2,7 @@
     margin: 0;
 }
 
-.create-post .add-post input {
+.create-post .add-post .post-text {
     text-align: left;
     width: 100%;
     font-size: 1.1em;
