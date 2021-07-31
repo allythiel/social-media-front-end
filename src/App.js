@@ -155,7 +155,13 @@ const App = () => {
       postNewPosting(currentUser._id, posting);
       console.log('New Post:', posting);
       console.log('user id', loggedInUser._id)
-      postings.push(posting);
+      
+      // Ally, state variables are immunable. if you use the push method on them, changing will not trigged React to re-render the DOM. Thus no screen updates after change
+      // const allPosts = [...postings];
+      // allPosts.push(posting);
+      const newCurrentUser = { ...currentUser };
+      newCurrentUser.posts.push(posting);
+      setCurrentUser(newCurrentUser);
       setNewPosting('');
    }
 
