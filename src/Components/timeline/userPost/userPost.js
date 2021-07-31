@@ -3,6 +3,7 @@ import LikesBar from './likesBar/likesBar';
 import './userPost.css';
 
 const UserPost = (props) => {
+
    return (
       <div className='user-post'>
          <p>

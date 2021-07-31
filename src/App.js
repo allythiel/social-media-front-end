@@ -212,7 +212,6 @@ const App = () => {
    }
 
 
-
    /////////////// CONSOLE.LOGS /////////////////
    console.log(users);
    console.log('current user: ', currentUser);
