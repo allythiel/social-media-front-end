@@ -153,7 +153,7 @@ const App = () => {
          likes: 0
       }
       postNewPosting(currentUser._id, posting);
-      console.log(posting);
+      console.log('New Post:', posting);
       console.log('user id', loggedInUser._id)
       postings.push(posting);
       setNewPosting('');

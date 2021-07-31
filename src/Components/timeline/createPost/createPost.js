@@ -19,6 +19,7 @@ const CreatePost = (props) => {
                   value={props.newPosting}
                   placeholder='Add a new posting ...'>
                </textarea>
+               {(props.newPosting.length > 2) && <button className='button-sm'>Save</button>}
             </form>
          </div>
       </div>
