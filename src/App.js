@@ -64,7 +64,10 @@ const App = () => {
    const getPostings = async (currentUser) => {
       await axios.get(`${apiPath}/${currentUser}`).then((res) => { setPostings(res.data) }).catch((err) => { console.log(err); });
    }
-
+// get all friends for current user ????????????????????????????????????????????
+   const getFriends = async (currentUser) => {
+      await axios.get(`${apiPath}/${currentUser}/friends`).then((res) => { setFriends(res.data) }).catch((err) => { console.log(err); });
+}
    //add New Posting
    const postNewPosting = async (id, data) => {
       await axios.post(`${apiPath}/${id}/post`, data).then((res) => (res.data)).catch((err) => console.log(err));
@@ -92,6 +95,11 @@ const App = () => {
       getPostings(currentUser);
       console.log('getPostings');
    }, [currentUser])
+ /////////////// get User Friens ??????????????????????
+   useEffect(() => {
+      getFriends(currentUser); 
+      console.log('getFriends')
+   }, [currentUser]) 
 
    /**********************************************************
    *  EVENT HANDLERS
