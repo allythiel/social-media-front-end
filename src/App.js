@@ -20,7 +20,7 @@ const App = () => {
       email: '',
       password: '',
    })
-   
+
    const [loggedInUser, setLoggedInUser] = useState(null);
    const [currentUser, setCurrentUser] = useState(null);
    const [newUserData, setNewUserData] = useState(null);
@@ -30,11 +30,11 @@ const App = () => {
    const [messageText, setMessageText] = useState('');
    const [showMessageBar, setShowMessageBar] = useState(false);
    const [newPosting, setNewPosting] = useState('');
-   const [postings, setPostings] = useState(null);
-   const [editProfile, setEditProfile] = useState({name: '', aboutMe: ''});
+   const [postings, setPostings] = useState([]);
+   const [editProfile, setEditProfile] = useState({ name: '', aboutMe: '' });
 
-  
-  
+
+
 
    /**********************************************************
     *  API ROUTES
@@ -61,14 +61,13 @@ const App = () => {
       await axios.post(`${apiPath}/login`, email).then((res) => { setLoggedInUser(res.data); setCurrentUser(res.data); }).catch((err) => { console.log(err); });
    }
 
-   // imported information below (GetPostings and PostNewPosting NEEDS UPDATING)
    const getPostings = async (currentUser) => {
       await axios.get(`${apiPath}/${currentUser}`).then((res) => { setPostings(res.data) }).catch((err) => { console.log(err); });
    }
 
    //add New Posting
-   const postNewPosting = async (data) => {
-      await axios.post(`${apiPath}`, data).then((res) => (res.data)).catch((err) => console.log(err));
+   const postNewPosting = async (id, data) => {
+      await axios.post(`${apiPath}/${id}/post`, data).then((res) => (res.data)).catch((err) => console.log(err));
    }
 
    /**********************************************************
@@ -76,7 +75,7 @@ const App = () => {
     **********************************************************/
    useEffect(() => {
       getAllUsers();
-   }, [])
+   }, [currentUser])
 
 
    useEffect(() => {
@@ -141,26 +140,32 @@ const App = () => {
       }
    }
    const changeUser = (user) => {
-      setCurrentUser (user)
-      console.log('tempUser', currentUser)  
+      setCurrentUser(user)
+      console.log('tempUser', currentUser)
    }
 
-   //handle new posting (needs updating)
+   //handle new posting 
    const handleNewPostingSubmit = (event) => {
       event.preventDefault();
-      alert('post something');
       const posting = {
-         text: newPosting,
+         post: newPosting,
+         author: loggedInUser.name,
          likes: 0
       }
-      postNewPosting(posting);
-      console.log(posting);
-      console.log('my posts', users[0].posts)
+      postNewPosting(currentUser._id, posting);
+      console.log('New Post:', posting);
+      console.log('user id', loggedInUser._id)
 
+      // Ally, state variables are immunable. if you use the push method on them, changing will not trigged React to re-render the DOM. Thus no screen updates after change
+      // const allPosts = [...postings];
+      // allPosts.push(posting);
+      const newCurrentUser = { ...currentUser };
+      newCurrentUser.posts.push(posting);
+      setCurrentUser(newCurrentUser);
+      setNewPosting('');
    }
 
-
-   //handle new posting change (needs updating)
+   //handle new posting change 
    const handleNewPostingChange = (event) => {
       setNewPosting(event.target.value);
    }
@@ -169,7 +174,7 @@ const App = () => {
    const handleEditProfileChange = (event) => {
       event.persist();
       setEditProfile(prevEditProfile => ({ ...prevEditProfile, [event.target.name]: event.target.value }));
-   
+
    }
 
 
@@ -196,10 +201,10 @@ const App = () => {
          <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} setCurrentUser={setCurrentUser} currentUser={currentUser} handleLoginAvatarClick={handleLoginAvatarClick} loggedInUser={loggedInUser} />
          {showMessageBar && <MessageBar messageText={messageText} setShowMessageBar={setShowMessageBar} handleCloseMessageBar={handleCloseMessageBar} />}
          <div className='content'>
-            {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit} 
+            {!loggedIn && <AppLogin newUser={newUser} handleUserChange={handleUserChange} handleUserSubmit={handleUserSubmit}
                register={register} setRegister={setRegister} setLoggedIn={setLoggedIn} />}
-          
-            {(loggedIn && currentUser) && <Main changeUser={changeUser} users={users} loggedInUser={loggedInUser} currentUser={currentUser} friends={friends} editProfile={editProfile} handleEditProfileChange={handleEditProfileChange} handleEditProfileSubmit={handleEditProfileSubmit} handleNewPostingChange={handleNewPostingChange} handleNewPostingSubmit={handleNewPostingSubmit} newPosting={newPosting} setNewPosting={setNewPosting} postings={postings} setPostings={setPostings}/>}
+
+            {(loggedIn && currentUser) && <Main changeUser={changeUser} users={users} loggedInUser={loggedInUser} currentUser={currentUser} friends={friends} editProfile={editProfile} handleEditProfileChange={handleEditProfileChange} handleEditProfileSubmit={handleEditProfileSubmit} handleNewPostingChange={handleNewPostingChange} handleNewPostingSubmit={handleNewPostingSubmit} newPosting={newPosting} setNewPosting={setNewPosting} postings={postings} setPostings={setPostings} />}
          </div>
          {/* <Footer /> */}
       </div>

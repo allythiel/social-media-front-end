@@ -6,7 +6,7 @@ const UserPost = (props) => {
    return (
       <div className='user-post'>
          <p>
-            <span>${`Billy Bob >>`}&nbsp;&nbsp;</span>{props.userPost.text}<i><b>~3 hours ago</b></i></p>
+            <span>{`${props.userPost.author} >>`}&nbsp;&nbsp;</span>{props.userPost.post}<i><b>~3 hours ago</b></i></p>
          <div>
             <LikesBar userPost={props.post} /><button className="button-sm">Remove</button>
          </div>
