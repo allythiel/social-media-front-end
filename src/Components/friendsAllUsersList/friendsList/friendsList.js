@@ -2,12 +2,12 @@ import React from 'react';
 import './friendsList.css';
 
 const FriendsList = (props) => { 
-   
-   const friends = props.friends.map((friend, index) => {
+ 
+   const friends = props.currentUser.friends.map((friend, index) => {
       return (
          <li key={index}>
          <div className="avatar-inline"><img src={friend.avatarURL} alt=''></img></div>
-         <div className='friend-name'>{friend.name}</div>
+         <div className='friend-name'>{friend.bff}</div>
       </li>
       )
    })

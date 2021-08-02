@@ -17,7 +17,7 @@ const Main = (props) => {
 
             </div>
             <div>
-               <FriendsAllUsersList changeUser={props.changeUser} users={props.users} loggedInUser={props.loggedInUser} currentUser={props.currentUser} f friends={props.friends} />
+               <FriendsAllUsersList changeUser={props.changeUser} users={props.users} loggedInUser={props.loggedInUser} currentUser={props.currentUser} friends={props.friends} setFriends={props.setFriends}/>
             </div>
          </div>
       </div>

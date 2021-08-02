@@ -15,8 +15,8 @@ const FriendsAllUsersList = (props) => {
    return (
       <div className='friends-all-users-list'> 
       <button className="button-md toggle-button" onClick={() => { changeDisplay()}}>{buttonText}</button>
-        {toggle && <FriendsList changeUser={props.changeUser} friends={props.friends} />}
-        {!toggle && <AllUsersList changeUser={props.changeUser} users={props.users} />}
+        {toggle && <FriendsList currentUser={props.currentUser} setFriends={props.setFriends} changeUser={props.changeUser} friends={props.friends} />}
+        {!toggle && <AllUsersList currentUser={props.currentUser} changeUser={props.changeUser} users={props.users} />}
        
       </div>
    )
